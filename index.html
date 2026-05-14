@@ -3,177 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrocerías Prefabricadas | Catálogo Profesional</title>
+    <title>Carrocerías Prefabricadas | Especialistas</title>
     <style>
         :root {
-            --primario: #ffcc00; /* Amarillo industrial Cantoni/Resma */
+            --primario: #ffcc00;
             --oscuro: #1a1a1a;
-            --gris-claro: #f8f9fa;
+            --gris: #f4f4f4;
         }
 
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            margin: 0;
-            line-height: 1.6;
-            color: #333;
-            background-color: var(--gris-claro);
-        }
+        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333; scroll-behavior: smooth; }
 
-        /* Navegación Estilo Liderkit */
+        /* Navegación */
         header {
             background: var(--oscuro);
             color: white;
-            padding: 15px 5%;
+            padding: 20px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 4px solid var(--primario);
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-bottom: 3px solid var(--primario);
         }
 
-        .logo { font-weight: 900; font-size: 1.4rem; letter-spacing: -1px; }
+        .logo { font-size: 1.5rem; font-weight: bold; }
         .logo span { color: var(--primario); }
 
-        nav a { color: white; text-decoration: none; margin-left: 20px; font-size: 0.9rem; text-transform: uppercase; }
+        nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; }
+        nav a:hover { color: var(--primario); }
 
-        /* Hero Inspirado en Auxiliar Carrocera */
+        /* Hero */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://liderkit.com/wp-content/uploads/2019/02/slider-1.jpg');
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&q=80&w=1200');
             background-size: cover;
             background-position: center;
-            color: white;
-            padding: 100px 5%;
-            text-align: center;
-        }
-
-        /* Secciones de Productos */
-        .section-title {
-            text-align: center;
-            margin: 50px 0;
-            font-size: 2rem;
-            text-transform: uppercase;
-        }
-
-        .container { width: 90%; max-width: 1200px; margin: auto; }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-bottom: 60px;
-        }
-
-        .card {
-            background: white;
-            border: 1px solid #ddd;
-            transition: 0.3s;
+            height: 400px;
             display: flex;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
         }
 
-        .card:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.1); transform: translateY(-5px); }
+        /* Contenedores */
+        .container { padding: 60px 5%; max-width: 1200px; margin: auto; }
+        .section-title { text-align: center; margin-bottom: 40px; text-transform: uppercase; position: relative; }
+        .section-title::after { content: ''; width: 60px; height: 40px; border-bottom: 3px solid var(--primario); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
 
+        /* Grid de Productos */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card { background: white; border: 1px solid #ddd; overflow: hidden; }
         .card img { width: 100%; height: 200px; object-fit: cover; }
+        .card-info { padding: 20px; }
+        .card-info h3 { margin: 0 0 10px 0; font-size: 1.1rem; }
 
-        .card-body { padding: 20px; flex-grow: 1; }
-        .card-tag { 
-            background: var(--primario); 
-            font-size: 0.7rem; 
-            padding: 2px 8px; 
-            font-weight: bold; 
-            display: inline-block;
-            margin-bottom: 10px;
-        }
+        /* Sección Marcas */
+        .marcas-grid { display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; background: white; padding: 40px; gap: 20px; }
+        .marca-item { font-size: 1.5rem; font-weight: 900; color: #ccc; filter: grayscale(1); }
 
-        .card h3 { margin: 0 0 10px 0; font-size: 1.1rem; color: var(--oscuro); }
-        .card p { font-size: 0.9rem; color: #666; }
+        /* Contacto */
+        .contacto-box { background: var(--oscuro); color: white; padding: 40px; border-radius: 5px; text-align: center; }
+        .btn-contacto { background: var(--primario); color: var(--oscuro); padding: 15px 30px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 20px; }
 
-        footer { background: var(--oscuro); color: white; padding: 40px 5%; text-align: center; font-size: 0.8rem; }
+        footer { text-align: center; padding: 40px; font-size: 0.8rem; color: #888; }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo">CARROCERIAS<span>PREFABRICADAS</span></div>
+    <div class="logo">CARROCERÍAS<span>PREFABRICADAS</span></div>
     <nav>
-        <a href="#cat">Productos</a>
+        <a href="#productos">Productos</a>
         <a href="#marcas">Marcas</a>
         <a href="#contacto">Contacto</a>
     </nav>
 </header>
 
 <section class="hero">
-    <h1>KITS Y COMPONENTES PARA CARROCEROS</h1>
-    <p>Distribuimos las mejores soluciones de Cantoni, Liderkit, Resma y Auxiliar Carrocera.</p>
+    <h1>KITS Y COMPONENTES INDUSTRIALES</h1>
+    <p>Soluciones avanzadas para el carrozado de vehículos pesados y ligeros.</p>
 </section>
 
-<div class="container" id="cat">
-    
-    <h2 class="section-title">Productos Destacados</h2>
-
+<div class="container" id="productos">
+    <h2 class="section-title">Catálogo de Productos</h2>
     <div class="grid">
         <div class="card">
-            <img src="https://www.cantoni.it/public/images/gamma/jolly-light-range-1-1.jpg" alt="Cantoni Jolly">
-            <div class="card-body">
-                <span class="card-tag">CANTONI</span>
-                <h3>Basculantes Gama Jolly</h3>
-                <p>Cajas basculantes ligeras en acero de alta resistencia para vehículos de hasta 7.5t.</p>
+            <img src="https://images.unsplash.com/photo-1591768793355-74d7c526cc18?auto=format&fit=crop&q=80&w=800" alt="Basculantes">
+            <div class="card-info">
+                <h3>Equipos Basculantes</h3>
+                <p>Inspirado en la gama Jolly de Cantoni. Sistemas hidráulicos de alta resistencia.</p>
             </div>
         </div>
-
         <div class="card">
-            <img src="https://liderkit.com/wp-content/uploads/2019/02/sandwich-1.jpg" alt="Liderkit Sandwich">
-            <div class="card-body">
-                <span class="card-tag">LIDERKIT</span>
-                <h3>Kit Plywood / Sandwich</h3>
-                <p>Kits de carrocería en kit (CKD) listos para montar con paneles aislantes de última generación.</p>
+            <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&q=80&w=800" alt="Kits Furgón">
+            <div class="card-info">
+                <h3>Kits de Carrocería CKD</h3>
+                <p>Paneles de Liderkit para montaje rápido de furgones de aluminio y sandwich.</p>
             </div>
         </div>
-
         <div class="card">
-            <img src="https://www.resma.es/wp-content/uploads/2021/05/herrajes-carroceria.jpg" alt="Herrajes Resma">
-            <div class="card-body">
-                <span class="card-tag">RESMA</span>
-                <h3>Cierres y Herrajes</h3>
-                <p>Sistemas de cierre inoxidable, bisagras y retenedores certificados para uso intensivo.</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="https://auxiliarcarrocera.com/wp-content/uploads/2021/04/auxiliar-carrocera-perfileria.jpg" alt="Perfilería">
-            <div class="card-body">
-                <span class="card-tag">AUX. CARROCERA</span>
-                <h3>Perfilería de Aluminio</h3>
-                <p>Marcos traseros, perfiles laterales y de protección fabricados en aluminio extruido.</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="https://www.cantoni.it/public/images/gamma/heavy-range-2-1.jpg" alt="Gama Pesada">
-            <div class="card-body">
-                <span class="card-tag">CANTONI</span>
-                <h3>Gama Pesada - Obras</h3>
-                <p>Equipos para camiones de 3 y 4 ejes diseñados para trabajos en canteras y construcción.</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="https://liderkit.com/wp-content/uploads/2019/02/frigorifico-1.jpg" alt="Frigoríficos">
-            <div class="card-body">
-                <span class="card-tag">LIDERKIT</span>
-                <h3>Furgones Isotermos</h3>
-                <p>Carrocerías con certificado ATP para transporte a temperatura controlada.</p>
+            <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=800" alt="Herrajes">
+            <div class="card-info">
+                <h3>Herrajes y Cierres</h3>
+                <p>Componentes de Resma: cierres de acero inoxidable y bisagras reforzadas.</p>
             </div>
         </div>
     </div>
+</div>
 
+<div class="container" id="marcas" style="background: #eee;">
+    <h2 class="section-title">Marcas que distribuimos</h2>
+    <div class="marcas-grid">
+        <div class="marca-item">CANTONI</div>
+        <div class="marca-item">LIDERKIT</div>
+        <div class="marca-item">RESMA</div>
+        <div class="marca-item">AUXILIAR CARROCERA</div>
+    </div>
+</div>
+
+<div class="container" id="contacto">
+    <div class="contacto-box">
+        <h2 class="section-title" style="color:white">Solicite Presupuesto</h2>
+        <p>Estamos en el Polígono Industrial para ofrecerte la mejor solución técnica.</p>
+        <p>Email: info@carroceriasprefabricadas.io</p>
+        <a href="mailto:info@carroceriasprefabricadas.io" class="btn-contacto">ENVIAR EMAIL AHORA</a>
+    </div>
 </div>
 
 <footer>
-    <p>CARROCERIAS PREFABRICADAS - Distribuidor Autorizado de Componentes de Automoción</p>
-    <p style="color: #666;">Polígono Industrial • Madrid, España • Contacto: info@tu-web.io</p>
+    &copy; 2024 Carrocerías Prefabricadas. Todos los derechos reservados.
 </footer>
 
 </body>
