@@ -3,33 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Categorías | Carrocerías Prefabricadas</title>
+    <title>Categorías y Marcas | Carrocerías Prefabricadas</title>
     <style>
-        /* Mantenemos tus variables y estilos originales */
-        :root { --primario: #ffcc00; --oscuro: #1a1a1a; --gris: #f4f4f4; }
-        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333; }
-        
-        header {
-            background: var(--oscuro); color: white; padding: 20px 5%;
-            display: flex; justify-content: space-between; align-items: center;
-            position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid var(--primario);
+        :root {
+            --primario: #ffcc00;
+            --oscuro: #1a1a1a;
+            --gris: #f4f4f4;
         }
+
+        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333; scroll-behavior: smooth; }
+
+        /* Navegación - Idéntica a tu Index */
+        header {
+            background: var(--oscuro);
+            color: white;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid var(--primario);
+        }
+
         .logo { font-size: 1.5rem; font-weight: bold; }
         .logo span { color: var(--primario); }
+
         nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; }
         nav a:hover { color: var(--primario); }
 
+        /* Contenedores */
         .container { padding: 60px 5%; max-width: 1200px; margin: auto; }
         .section-title { text-align: center; margin-bottom: 40px; text-transform: uppercase; position: relative; }
-        .section-title::after { content: ''; width: 60px; height: 3px; background: var(--primario); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+        .section-title::after { content: ''; width: 60px; height: 40px; border-bottom: 3px solid var(--primario); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
 
-        /* Grid de Categorías mejorado */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
-        .card { background: white; border: 1px solid #ddd; transition: transform 0.3s; text-align: center; padding-bottom: 20px; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .card img { width: 100%; height: 180px; object-fit: cover; }
-        .btn-ver { background: var(--oscuro); color: white; padding: 10px 20px; text-decoration: none; display: inline-block; margin-top: 15px; font-size: 0.8rem; }
+        /* Grid de Categorías (Marcas) */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .card { background: white; border: 1px solid #ddd; overflow: hidden; transition: 0.3s; display: flex; flex-direction: column; }
+        .card:hover { transform: translateY(-5px); border-color: var(--primario); }
+        .card img { width: 100%; height: 220px; object-fit: cover; }
+        .card-info { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .card-info h3 { margin: 0 0 10px 0; font-size: 1.2rem; color: var(--oscuro); }
+        
+        /* Botones de enlace */
+        .btn-ver { 
+            background: var(--oscuro); 
+            color: white; 
+            padding: 12px; 
+            text-decoration: none; 
+            text-align: center; 
+            font-weight: bold; 
+            font-size: 0.8rem; 
+            margin-top: 15px; 
+            transition: 0.3s;
+        }
         .btn-ver:hover { background: var(--primario); color: var(--oscuro); }
+
+        footer { text-align: center; padding: 40px; font-size: 0.8rem; color: #888; border-top: 1px solid #eee; }
     </style>
 </head>
 <body>
@@ -38,39 +69,57 @@
     <div class="logo">CARROCERÍAS<span>PREFABRICADAS</span></div>
     <nav>
         <a href="index.html">Inicio</a>
-        <a href="categorias.html" style="color: var(--primario);">Categorías</a>
+        <a href="categorias.html" style="color: var(--primario);">Categorías</a> 
+        <a href="index.html#marcas">Marcas</a>
         <a href="index.html#contacto">Contacto</a>
     </nav>
 </header>
 
 <div class="container">
-    <h2 class="section-title">Nuestras Líneas de Producto</h2>
+    <h2 class="section-title">Categorías por Fabricante</h2>
+    <p style="text-align: center; margin-bottom: 40px;">Seleccione una marca para ver los componentes y soluciones específicas.</p>
+    
     <div class="grid">
         <div class="card">
-            <img src="https://www.cantoni.it/public/prodotti/jolly-light/jolly-light-1.jpg" alt="Gama Ligera">
-            <h3>Gama Ligera (Jolly)</h3>
-            <p>Soluciones para vehículos ligeros.</p>
-            <a href="#" class="btn-ver">Explorar Productos</a>
+            <img src="https://www.cantoni.it/public/prodotti/jolly-light/jolly-light-1.jpg" alt="Cantoni Italia">
+            <div class="card-info">
+                <h3>CANTONI (Italia)</h3>
+                <p>Equipos basculantes y sistemas hidráulicos de la gama Jolly. Tecnología italiana para vehículos ligeros.</p>
+                <a href="cantoni.html" class="btn-ver">VER CATÁLOGO CANTONI</a>
+            </div>
         </div>
 
         <div class="card">
-            <img src="https://liderkit.com/wp-content/uploads/2019/02/sandwich.jpg" alt="Kits Isotermos">
-            <h3>Kits Isotermos</h3>
-            <p>Paneles sandwich de alta capacidad térmica.</p>
-            <a href="#" class="btn-ver">Explorar Productos</a>
+            <img src="https://liderkit.com/wp-content/uploads/2019/02/kit-aluminio.jpg" alt="Liderkit">
+            <div class="card-info">
+                <h3>LIDERKIT</h3>
+                <p>Especialistas en Kits CKD. Paneles sándwich, aluminio y poliéster de fácil montaje.</p>
+                <a href="liderkit.html" class="btn-ver">VER CATÁLOGO LIDERKIT</a>
+            </div>
         </div>
 
         <div class="card">
-            <img src="https://auxiliarcarrocera.com/wp-content/uploads/2021/03/plataforma.jpg" alt="Plataformas">
-            <h3>Plataformas Elevadoras</h3>
-            <p>Componentes hidráulicos de carga.</p>
-            <a href="#" class="btn-ver">Explorar Productos</a>
+            <img src="https://www.resma.es/wp-content/uploads/2018/10/herrajes-slider.jpg" alt="Resma España">
+            <div class="card-info">
+                <h3>RESMA España</h3>
+                <p>Componentes estructurales, herrajes de acero inoxidable y cierres de seguridad industrial.</p>
+                <a href="resma.html" class="btn-ver">VER CATÁLOGO RESMA</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://auxiliarcarrocera.com/wp-content/uploads/2021/03/aux-carrocera.jpg" alt="Auxiliar Carrocera">
+            <div class="card-info">
+                <h3>AUXILIAR CARROCERA</h3>
+                <p>Catálogo completo de accesorios y soluciones auxiliares para el carrozado profesional.</p>
+                <a href="auxiliar.html" class="btn-ver">VER CATÁLOGO AUXILIAR</a>
+            </div>
         </div>
     </div>
 </div>
 
 <footer>
-    &copy; 2024 Carrocerías Prefabricadas.
+    &copy; 2026 Carrocerías Prefabricadas. Todos los derechos reservados.
 </footer>
 
 </body>
