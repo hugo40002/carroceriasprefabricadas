@@ -38,7 +38,7 @@
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&q=80&w=1200');
             background-size: cover;
             background-position: center;
-            height: 400px;
+            height: 450px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -46,28 +46,32 @@
             color: white;
             text-align: center;
         }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
 
         /* Contenedores */
         .container { padding: 60px 5%; max-width: 1200px; margin: auto; }
         .section-title { text-align: center; margin-bottom: 40px; text-transform: uppercase; position: relative; }
-        .section-title::after { content: ''; width: 60px; height: 40px; border-bottom: 3px solid var(--primario); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+        .section-title::after { content: ''; width: 60px; height: 3px; background: var(--primario); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
 
         /* Grid de Productos */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .card { background: white; border: 1px solid #ddd; overflow: hidden; }
+        .card { background: white; border: 1px solid #ddd; overflow: hidden; transition: 0.3s; }
+        .card:hover { border-color: var(--primario); }
         .card img { width: 100%; height: 200px; object-fit: cover; }
         .card-info { padding: 20px; }
         .card-info h3 { margin: 0 0 10px 0; font-size: 1.1rem; }
 
         /* Sección Marcas */
-        .marcas-grid { display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; background: white; padding: 40px; gap: 20px; }
-        .marca-item { font-size: 1.5rem; font-weight: 900; color: #ccc; filter: grayscale(1); }
+        .marcas-grid { display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; background: white; padding: 40px; gap: 30px; }
+        .marca-item { font-size: 1.5rem; font-weight: 900; color: #bbb; transition: 0.3s; text-decoration: none; }
+        .marca-item:hover { color: var(--oscuro); filter: grayscale(0); }
 
         /* Contacto */
         .contacto-box { background: var(--oscuro); color: white; padding: 40px; border-radius: 5px; text-align: center; }
-        .btn-contacto { background: var(--primario); color: var(--oscuro); padding: 15px 30px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 20px; }
+        .btn-contacto { background: var(--primario); color: var(--oscuro); padding: 15px 30px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 20px; border: none; cursor: pointer; transition: 0.3s; }
+        .btn-contacto:hover { background: white; }
 
-        footer { text-align: center; padding: 40px; font-size: 0.8rem; color: #888; }
+        footer { text-align: center; padding: 40px; font-size: 0.8rem; color: #888; background: #fff; }
     </style>
 </head>
 <body>
@@ -75,26 +79,27 @@
 <header>
     <div class="logo">CARROCERÍAS<span>PREFABRICADAS</span></div>
     <nav>
-    <a href="index.html">Inicio</a>
-    <a href="categorias.html">Categorías</a> 
-    <a href="#marcas">Marcas</a>
-    <a href="#contacto">Contacto</a>
-</nav>
+        <a href="index.html">Inicio</a>
+        <a href="categorias.html">Categorías</a> 
+        <a href="#marcas">Marcas</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
 </header>
 
 <section class="hero">
     <h1>KITS Y COMPONENTES INDUSTRIALES</h1>
     <p>Soluciones avanzadas para el carrozado de vehículos pesados y ligeros.</p>
+    <a href="categorias.html" class="btn-contacto">VER CATÁLOGO COMPLETO</a>
 </section>
 
 <div class="container" id="productos">
-    <h2 class="section-title">Catálogo de Productos</h2>
+    <h2 class="section-title">Nuestros Destacados</h2>
     <div class="grid">
         <div class="card">
             <img src="https://images.unsplash.com/photo-1591768793355-74d7c526cc18?auto=format&fit=crop&q=80&w=800" alt="Basculantes">
             <div class="card-info">
                 <h3>Equipos Basculantes</h3>
-                <p>Inspirado en la gama Jolly de Cantoni. Sistemas hidráulicos de alta resistencia.</p>
+                <p>Sistemas hidráulicos de alta resistencia inspirados en la tecnología Cantoni.</p>
             </div>
         </div>
         <div class="card">
@@ -114,21 +119,24 @@
     </div>
 </div>
 
-<div class="container" id="marcas" style="background: #eee;">
-    <h2 class="section-title">Marcas que distribuimos</h2>
-    <div class="marcas-grid">
-        <div class="marca-item">CANTONI</div>
-        <div class="marca-item">LIDERKIT</div>
-        <div class="marca-item">RESMA</div>
-        <div class="marca-item">AUXILIAR CARROCERA</div>
+<div id="marcas" style="background: #eee;">
+    <div class="container">
+        <h2 class="section-title">Marcas que distribuimos</h2>
+        <div class="marcas-grid">
+            <a href="cantoni.html" class="marca-item">CANTONI</a>
+            <a href="liderkit.html" class="marca-item">LIDERKIT</a>
+            <a href="resma.html" class="marca-item">RESMA</a>
+            <a href="auxiliar.html" class="marca-item">AUXILIAR CARROCERA</a>
+        </div>
     </div>
 </div>
 
 <div class="container" id="contacto">
     <div class="contacto-box">
-        <h2 class="section-title" style="color:white">Solicite Presupuesto</h2>
-        <p>Estamos en el Polígono Industrial para ofrecerte la mejor solución técnica.</p>
-        <p>Email: info@carroceriasprefabricadas.io</p>
+        <h2 class="section-title" style="color:white; margin-top: 0;">Solicite Presupuesto</h2>
+        <p>Expertos en carrozado industrial a su disposición.</p>
+        <p><strong>Ubicación:</strong> Polígono Industrial Central</p>
+        <p><strong>Email:</strong> info@carroceriasprefabricadas.io</p>
         <a href="mailto:info@carroceriasprefabricadas.io" class="btn-contacto">ENVIAR EMAIL AHORA</a>
     </div>
 </div>
