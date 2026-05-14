@@ -3,16 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RESMA | Carrocerías Estructurales</title>
+    <title>RESMA | Carrocerías Estructurales de Alta Resistencia</title>
     <style>
         :root {
             --primario: #ffcc00;
             --oscuro: #1a1a1a;
             --gris: #f4f4f4;
             --blanco: #ffffff;
+            --acento-metal: #2c3e50;
         }
 
-        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333; scroll-behavior: smooth; }
+        body { 
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            line-height: 1.6; 
+            color: #333; 
+            scroll-behavior: smooth; 
+            background-color: #fafafa;
+        }
 
         /* Navegación */
         header {
@@ -35,12 +44,12 @@
         nav a { color: var(--blanco); text-decoration: none; margin-left: 20px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; transition: 0.3s; }
         nav a:hover { color: var(--primario); }
 
-        /* Hero Mini */
+        /* Hero */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.pexels.com/photos/1105676/pexels-photo-1105676.jpeg?auto=compress&cs=tinysrgb&w=1200');
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://images.pexels.com/photos/1105676/pexels-photo-1105676.jpeg?auto=compress&cs=tinysrgb&w=1200');
             background-size: cover;
             background-position: center;
-            height: 300px;
+            height: 350px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -49,28 +58,96 @@
             text-align: center;
             padding: 0 20px;
         }
-        .hero h1 { font-size: 2.5rem; margin: 0; text-transform: uppercase; }
+        .hero h1 { font-size: 3rem; margin: 0; text-transform: uppercase; font-weight: 800; }
+        .hero p { font-size: 1.2rem; margin-top: 10px; color: var(--primario); letter-spacing: 1px; }
 
         /* Contenedores */
-        .container { padding: 60px 5%; max-width: 1200px; margin: auto; }
-        .section-title { text-align: center; margin-bottom: 50px; text-transform: uppercase; position: relative; }
-        .section-title::after { content: ''; width: 80px; height: 4px; background: var(--primario); position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); }
+        .container { padding: 80px 5%; max-width: 1200px; margin: auto; }
+        .section-title { text-align: center; margin-bottom: 60px; text-transform: uppercase; position: relative; font-weight: 800; }
+        .section-title::after { 
+            content: ''; width: 60px; height: 5px; background: var(--primario); 
+            position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); 
+        }
 
-        /* Grid */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background: var(--blanco); border: 1px solid #ddd; overflow: hidden; transition: 0.4s; border-radius: 4px; }
-        .card:hover { transform: translateY(-10px); border-color: var(--primario); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .card img { width: 100%; height: 250px; object-fit: cover; }
-        .card-info { padding: 25px; }
-        .card-info h3 { margin: 0 0 15px 0; color: var(--oscuro); font-size: 1.3rem; }
+        /* Grid de Productos */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+        
+        .card { 
+            background: var(--blanco); 
+            border: none; 
+            overflow: hidden; 
+            transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
+            border-radius: 12px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .card:hover { transform: translateY(-12px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .card img { width: 100%; height: 260px; object-fit: cover; border-bottom: 4px solid var(--primario); }
+        
+        .card-info { padding: 35px; }
+        .card-info h3 { margin: 0 0 15px 0; color: var(--oscuro); font-size: 1.5rem; font-weight: 700; }
+        .card-info p { color: #666; margin-bottom: 25px; }
+        
+        .features-list { 
+            list-style: none; 
+            padding: 0; 
+            margin: 0 0 30px 0; 
+            font-size: 0.9rem; 
+            color: #444;
+        }
+        .features-list li { margin-bottom: 10px; display: flex; align-items: center; }
+        .features-list li::before { content: '◈'; color: var(--primario); margin-right: 10px; font-weight: bold; }
 
-        .btn-card { background: var(--oscuro); color: var(--blanco); padding: 10px 20px; text-decoration: none; font-weight: bold; display: inline-block; transition: 0.3s; }
+        .btn-card { 
+            background: var(--oscuro); 
+            color: var(--blanco); 
+            padding: 14px 28px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            display: inline-block; 
+            transition: 0.3s; 
+            border-radius: 6px;
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
         .btn-card:hover { background: var(--primario); color: var(--oscuro); }
 
-        /* Contacto Rapido */
-        .contacto-box { background: var(--oscuro); color: var(--blanco); padding: 40px; border-radius: 8px; text-align: center; margin-top: 50px; }
+        /* Contacto Industrial */
+        .contacto-box { 
+            background: var(--oscuro); 
+            color: var(--blanco); 
+            padding: 60px 40px; 
+            border-radius: 15px; 
+            text-align: center; 
+            margin-top: 40px; 
+            border-top: 6px solid var(--primario);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        .contacto-box h3 { font-size: 2.2rem; margin-top: 0; font-weight: 800; }
+        .contacto-box p { font-size: 1.1rem; margin-bottom: 5px; opacity: 0.9; }
         
-        footer { text-align: center; padding: 40px; font-size: 0.85rem; color: #777; background: #f9f9f9; }
+        .wa-btn {
+            background: var(--primario);
+            color: var(--oscuro) !important;
+            padding: 18px 40px;
+            font-size: 1.1rem;
+            margin-top: 30px;
+            display: inline-block;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            transition: 0.3s ease;
+        }
+        .wa-btn:hover { transform: scale(1.05); background: #fff; }
+
+        footer { text-align: center; padding: 40px; font-size: 0.85rem; color: #777; background: #f4f4f4; border-top: 1px solid #ddd; }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .container { padding: 50px 5%; }
+        }
     </style>
 </head>
 <body>
@@ -87,40 +164,57 @@
 
 <section class="hero">
     <h1>RESMA ESPAÑA</h1>
-    <p>Estructuras metálicas y cajas de alta resistencia para camión.</p>
+    <p>Ingeniería de acero para el transporte profesional</p>
 </section>
 
 <div class="container">
-    <h2 class="section-title">Nuestras Cajas Estructurales</h2>
+    <h2 class="section-title">Estructuras Metálicas Certificadas</h2>
+    
     <div class="grid">
         <div class="card">
-            <img src="https://images.pexels.com/photos/1105676/pexels-photo-1105676.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Caja Abierta">
+            <img src="https://images.pexels.com/photos/1105676/pexels-photo-1105676.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Caja Abierta Resma">
             <div class="card-info">
-                <h3>Cajas Abiertas Reforzadas</h3>
-                <p>Estructuras diseñadas para el transporte de materiales pesados con máxima durabilidad.</p>
-                <a href="https://wa.me/34658297095" class="btn-card">PRESUPUESTO</a>
+                <h3>Cajas Abiertas</h3>
+                <p>Estructuras de acero galvanizado diseñadas para soportar cargas pesadas y condiciones de trabajo extremas.</p>
+                <ul class="features-list">
+                    <li>Perfilería reforzada de alto límite elástico.</li>
+                    <li>Suelo en chapa damero o madera finlandesa.</li>
+                    <li>Opciones de laterales en aluminio o acero.</li>
+                    <li>Tratamiento anticorrosión de larga duración.</li>
+                </ul>
+                <a href="https://wa.me/34658297095" class="btn-card">PRESUPUESTO SIN COMPROMISO</a>
             </div>
         </div>
+
         <div class="card">
-            <img src="https://images.pexels.com/photos/4246120/pexels-photo-4246120.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Carrocería Cerrada">
+            <img src="https://images.pexels.com/photos/4246120/pexels-photo-4246120.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Carrocería Cerrada Resma">
             <div class="card-info">
-                <h3>Furgones Estructurales</h3>
-                <p>Cajas cerradas construidas con la perfilería de alta gama exclusiva de Resma.</p>
-                <a href="https://wa.me/34658297095" class="btn-card">PRESUPUESTO</a>
+                <h3>Furgones de Perfilería</h3>
+                <p>Cajas cerradas que combinan la ligereza de los paneles con la robustez estructural exclusiva de Resma.</p>
+                <ul class="features-list">
+                    <li>Marcos traseros en acero inoxidable.</li>
+                    <li>Sistemas de amarre de carga integrados.</li>
+                    <li>Puertas de apertura total 270º.</li>
+                    <li>Certificación de seguridad estructural.</li>
+                </ul>
+                <a href="https://wa.me/34658297095" class="btn-card">INFO TÉCNICA</a>
             </div>
         </div>
     </div>
 
     <div class="contacto-box">
-        <h3>Solicite información técnica</h3>
-        <p>Polígono Industrial Torrehierro | Tel: 658 297 095</p>
+        <h3>Especialistas en Perfilería Industrial</h3>
+        <p>Distribuidores oficiales en el Polígono Industrial Torrehierro.</p>
+        <p><strong>Atención Personalizada:</strong> 658 297 095</p>
         <p>sanchezreneo@gmail.com</p>
-        <a href="https://wa.me/34658297095" class="btn-card" style="background: var(--primario); color: var(--oscuro); margin-top: 15px;">WHATSAPP DIRECTO</a>
+        <a href="https://wa.me/34658297095" class="wa-btn">
+            CONSULTA POR WHATSAPP
+        </a>
     </div>
 </div>
 
 <footer>
-    &copy; 2024 Carrocerías Prefabricadas - Torrehierro. Todos los derechos reservados.
+    &copy; 2024 Carrocerías Prefabricadas S.L. - Torrehierro, Talavera de la Reina.
 </footer>
 
 </body>
