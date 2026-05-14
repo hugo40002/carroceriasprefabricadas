@@ -3,33 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrocerías Prefabricadas | Especialistas en Cajas</title>
+    <title>Carrocerías Prefabricadas | Especialistas en Cajas y Furgones</title>
     <style>
-        :root { --primario: #ffcc00; --oscuro: #1a1a1a; --gris: #f4f4f4; --blanco: #ffffff; }
-        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333; scroll-behavior: smooth; }
-        header { background: var(--oscuro); color: var(--blanco); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid var(--primario); }
+        :root { 
+            --primario: #ffcc00; 
+            --oscuro: #1a1a1a; 
+            --gris: #f4f4f4; 
+            --blanco: #ffffff; 
+            --sombra: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        body { 
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            line-height: 1.6; 
+            color: #333; 
+            scroll-behavior: smooth; 
+        }
+
+        /* Navegación */
+        header { 
+            background: var(--oscuro); 
+            color: var(--blanco); 
+            padding: 15px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            border-bottom: 3px solid var(--primario); 
+        }
+
         .logo-link { text-decoration: none; color: inherit; }
-        .logo { font-size: 1.5rem; font-weight: bold; text-transform: uppercase; }
+        .logo { font-size: 1.4rem; font-weight: 800; text-transform: uppercase; letter-spacing: -1px; }
         .logo span { color: var(--primario); }
-        nav a { color: var(--blanco); text-decoration: none; margin-left: 20px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; transition: 0.3s; }
+
+        nav a { 
+            color: var(--blanco); 
+            text-decoration: none; 
+            margin-left: 20px; 
+            font-weight: bold; 
+            font-size: 0.8rem; 
+            text-transform: uppercase; 
+            transition: 0.3s; 
+        }
         nav a:hover { color: var(--primario); }
-        .hero { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.pexels.com/photos/2199293/pexels-photo-2199293.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); background-size: cover; background-position: center; height: 450px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: var(--blanco); text-align: center; padding: 0 20px; }
-        .container { padding: 60px 5%; max-width: 1200px; margin: auto; }
-        .section-title { text-align: center; margin-bottom: 50px; text-transform: uppercase; position: relative; }
-        .section-title::after { content: ''; width: 80px; height: 4px; background: var(--primario); position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .card { background: var(--blanco); border: 1px solid #ddd; overflow: hidden; transition: 0.4s; border-radius: 4px; }
-        .card:hover { transform: translateY(-10px); border-color: var(--primario); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .card img { width: 100%; height: 200px; object-fit: cover; }
-        .card-info { padding: 20px; }
-        .btn-card { background: var(--oscuro); color: var(--blanco); padding: 10px 20px; text-decoration: none; font-weight: bold; display: inline-block; transition: 0.3s; font-size: 0.9rem; }
+
+        /* Hero Section */
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
+                        url('https://images.pexels.com/photos/2199293/pexels-photo-2199293.jpeg?auto=compress&cs=tinysrgb&w=1260') no-repeat center center/cover; 
+            height: 550px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            color: var(--blanco); 
+            text-align: center; 
+            padding: 0 20px; 
+        }
+
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; text-transform: uppercase; }
+        .hero p { font-size: 1.2rem; max-width: 700px; margin-bottom: 30px; }
+
+        /* Contenedores y Títulos */
+        .container { padding: 80px 5%; max-width: 1200px; margin: auto; }
+        .section-title { text-align: center; margin-bottom: 60px; text-transform: uppercase; position: relative; font-weight: 800; }
+        .section-title::after { 
+            content: ''; width: 60px; height: 5px; background: var(--primario); 
+            position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); 
+        }
+
+        /* Grid de Soluciones */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; }
+        .card { 
+            background: var(--blanco); 
+            border: 1px solid #eee; 
+            overflow: hidden; 
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            border-radius: 8px; 
+            box-shadow: var(--sombra);
+        }
+        .card:hover { transform: translateY(-12px); border-color: var(--primario); }
+        .card img { width: 100%; height: 220px; object-fit: cover; }
+        .card-info { padding: 25px; }
+        .card-info h3 { margin: 0 0 10px 0; font-size: 1.3rem; }
+
+        .btn-card { 
+            background: var(--oscuro); 
+            color: var(--blanco); 
+            padding: 12px 24px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            display: inline-block; 
+            transition: 0.3s; 
+            font-size: 0.85rem; 
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
         .btn-card:hover { background: var(--primario); color: var(--oscuro); }
-        .marcas-section { background: var(--gris); padding: 60px 5%; text-align: center; }
-        .marcas-grid { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 30px; margin-top: 30px; }
-        .marca-item { font-size: 1.4rem; font-weight: 900; color: #666; text-decoration: none; transition: 0.3s; padding: 10px 20px; border: 2px solid transparent; }
-        .marca-item:hover { color: var(--oscuro); border-color: var(--primario); }
-        .contacto-box { background: var(--oscuro); color: var(--blanco); padding: 50px; border-radius: 8px; text-align: center; margin-top: 40px; }
-        footer { text-align: center; padding: 30px; font-size: 0.85rem; color: #777; background: #fff; }
+
+        /* Marcas */
+        .marcas-section { background: var(--gris); padding: 80px 5%; text-align: center; }
+        .marcas-grid { 
+            display: flex; justify-content: center; align-items: center; 
+            flex-wrap: wrap; gap: 40px; margin-top: 40px; 
+        }
+        .marca-item { 
+            font-size: 1.6rem; font-weight: 900; color: #bbb; 
+            text-decoration: none; transition: 0.4s; 
+        }
+        .marca-item:hover { color: var(--oscuro); transform: scale(1.1); }
+
+        /* Contacto */
+        .contacto-box { 
+            background: var(--oscuro); 
+            color: var(--blanco); 
+            padding: 60px 20px; 
+            border-radius: 12px; 
+            text-align: center; 
+            margin-top: 20px;
+            border-bottom: 8px solid var(--primario);
+        }
+        .contacto-box h2 { font-size: 2rem; margin-bottom: 20px; }
+        .contacto-box p { font-size: 1.1rem; margin: 5px 0; }
+
+        footer { text-align: center; padding: 40px; font-size: 0.9rem; color: #888; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            header { flex-direction: column; gap: 15px; }
+            nav a { margin: 0 10px; }
+        }
     </style>
 </head>
 <body>
@@ -47,51 +155,51 @@
 </header>
 
 <section class="hero">
-    <h1>VENTA DE CARROCERÍAS EN TORREHIERRO</h1>
-    <p>Distribuidores líderes de cajas basculantes, furgones y estructuras industriales.</p>
-    <a href="categorias.html" class="btn-card" style="background:var(--primario); color:var(--oscuro); padding: 15px 30px; margin-top: 20px; border-radius: 4px;">VER CATÁLOGO COMPLETO</a>
+    <h1>Carrocerías en Torrehierro</h1>
+    <p>Calidad industrial certificada. Distribución oficial de las marcas líderes en el sector del transporte.</p>
+    <a href="categorias.html" class="btn-card" style="background:var(--primario); color:var(--oscuro); padding: 18px 40px; font-size: 1rem;">VER CATÁLOGO COMPLETO</a>
 </section>
 
 <div class="container">
     <h2 class="section-title">Soluciones Destacadas</h2>
     <div class="grid">
         <div class="card">
-            <img src="https://images.pexels.com/photos/10133334/pexels-photo-10133334.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Basculantes">
+            <img src="https://images.pexels.com/photos/10133334/pexels-photo-10133334.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Cajas Basculantes Cantoni">
             <div class="card-info">
                 <h3>Cajas Basculantes</h3>
-                <p>Ingeniería Cantoni para volquetes ligeros y pesados.</p>
-                <a href="cantoni.html" class="btn-card">VER CANTONI</a>
+                <p>Ingeniería avanzada para volquetes de alto rendimiento.</p>
+                <a href="cantoni.html" class="btn-card">INFO CANTONI</a>
             </div>
         </div>
         <div class="card">
-            <img src="https://images.pexels.com/photos/4246120/pexels-photo-4246120.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Furgon">
+            <img src="https://images.pexels.com/photos/4246120/pexels-photo-4246120.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Kits Furgón Liderkit">
             <div class="card-info">
                 <h3>Kits de Furgón</h3>
-                <p>Cajas de aluminio y paneles sandwich de Liderkit.</p>
-                <a href="liderkit.html" class="btn-card">VER LIDERKIT</a>
+                <p>Paneles sandwich y aluminio ultra ligeros y resistentes.</p>
+                <a href="liderkit.html" class="btn-card">INFO LIDERKIT</a>
             </div>
         </div>
         <div class="card">
-            <img src="https://images.pexels.com/photos/1105676/pexels-photo-1105676.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Estructuras">
+            <img src="https://images.pexels.com/photos/1105676/pexels-photo-1105676.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Estructuras Resma">
             <div class="card-info">
                 <h3>Cajas Estructurales</h3>
-                <p>Máxima robustez con la perfilería oficial de Resma.</p>
-                <a href="resma.html" class="btn-card">VER RESMA</a>
+                <p>Máxima robustez técnica con perfilería certificada.</p>
+                <a href="resma.html" class="btn-card">INFO RESMA</a>
             </div>
         </div>
         <div class="card">
-            <img src="https://images.pexels.com/photos/1554654/pexels-photo-1554654.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Especiales">
+            <img src="https://images.pexels.com/photos/1554654/pexels-photo-1554654.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Auxiliar Carrocera Especiales">
             <div class="card-info">
                 <h3>Cajas Especiales</h3>
-                <p>Tauliner y furgones a medida de Auxiliar Carrocera.</p>
-                <a href="auxiliar.html" class="btn-card">VER AUXILIAR</a>
+                <p>Sistemas Tauliner y personalizaciones a medida.</p>
+                <a href="auxiliar.html" class="btn-card">INFO AUXILIAR</a>
             </div>
         </div>
     </div>
 </div>
 
 <section class="marcas-section" id="marcas">
-    <h2 class="section-title">Marcas Oficiales</h2>
+    <h2 class="section-title">Confianza Oficial</h2>
     <div class="marcas-grid">
         <a href="cantoni.html" class="marca-item">CANTONI</a>
         <a href="liderkit.html" class="marca-item">LIDERKIT</a>
@@ -102,14 +210,17 @@
 
 <div class="container" id="contacto">
     <div class="contacto-box">
-        <h2 style="color:white; margin-top: 0; text-transform: uppercase;">Atención al Cliente</h2>
-        <p>Polígono Industrial Torrehierro | 📞 658 297 095</p>
-        <p>📧 sanchezreneo@gmail.com</p>
-        <a href="https://wa.me/34658297095" class="btn-card" style="background:var(--primario); color:var(--oscuro); margin-top: 20px;">CONTACTAR POR WHATSAPP</a>
+        <h2 style="color:white; margin-top: 0; text-transform: uppercase;">¿Necesitas asesoramiento técnico?</h2>
+        <p><strong>Ubicación:</strong> Polígono Industrial Torrehierro, Talavera de la Reina</p>
+        <p><strong>Teléfono:</strong> 658 297 095 | <strong>Email:</strong> sanchezreneo@gmail.com</p>
+        <br>
+        <a href="https://wa.me/34658297095" class="btn-card" style="background:var(--primario); color:var(--oscuro); padding: 15px 40px;">
+            ABRIR CHAT DE WHATSAPP
+        </a>
     </div>
 </div>
 
-<footer>&copy; 2024 Carrocerías Prefabricadas - Torrehierro.</footer>
+<footer>&copy; 2024 Carrocerías Prefabricadas S.L. - Eficiencia en el Transporte Profesional.</footer>
 
 </body>
 </html>
