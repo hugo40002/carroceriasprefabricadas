@@ -5,23 +5,174 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categorías | Carrocerías Prefabricadas</title>
     <style>
-        :root { --primario: #ffcc00; --oscuro: #1a1a1a; --gris: #f4f4f4; --blanco: #ffffff; }
-        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333; }
-        header { background: var(--oscuro); color: var(--blanco); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--primario); position: sticky; top: 0; z-index: 1000; }
+        :root { 
+            --primario: #ffcc00; 
+            --oscuro: #1a1a1a; 
+            --gris-claro: #f8f9fa; 
+            --blanco: #ffffff; 
+            --texto: #333333;
+            --sombra: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        body { 
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            line-height: 1.6; 
+            color: var(--texto); 
+            background-color: #fcfcfc;
+        }
+
+        /* Navegación */
+        header { 
+            background: var(--oscuro); 
+            color: var(--blanco); 
+            padding: 15px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 4px solid var(--primario); 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
         .logo-link { text-decoration: none; color: inherit; }
-        .logo { font-size: 1.5rem; font-weight: bold; text-transform: uppercase; }
+        .logo { font-size: 1.4rem; font-weight: 800; text-transform: uppercase; letter-spacing: -0.5px; }
         .logo span { color: var(--primario); }
-        nav a { color: var(--blanco); text-decoration: none; margin-left: 20px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; }
+
+        nav a { 
+            color: var(--blanco); 
+            text-decoration: none; 
+            margin-left: 20px; 
+            font-weight: bold; 
+            font-size: 0.85rem; 
+            text-transform: uppercase; 
+            transition: color 0.3s ease;
+        }
+        nav a:hover { color: var(--primario); }
+
+        /* Contenido Principal */
         .container { padding: 60px 5%; max-width: 1200px; margin: auto; }
-        .section-title { text-align: center; margin-bottom: 50px; text-transform: uppercase; position: relative; }
-        .section-title::after { content: ''; width: 80px; height: 4px; background: var(--primario); position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .card { background: var(--blanco); border: 1px solid #ddd; overflow: hidden; transition: 0.4s; border-radius: 4px; }
-        .card:hover { transform: translateY(-10px); border-color: var(--primario); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .card img { width: 100%; height: 220px; object-fit: cover; }
-        .card-info { padding: 20px; }
-        .btn-card { background: var(--oscuro); color: var(--blanco); padding: 10px 20px; text-decoration: none; font-weight: bold; display: inline-block; transition: 0.3s; font-size: 0.9rem; }
-        footer { text-align: center; padding: 40px; font-size: 0.85rem; color: #777; }
+        
+        .section-title { 
+            text-align: center; 
+            margin-bottom: 60px; 
+            text-transform: uppercase; 
+            position: relative;
+            font-size: 2rem;
+            color: var(--oscuro);
+        }
+
+        .section-title::after { 
+            content: ''; 
+            width: 60px; 
+            height: 4px; 
+            background: var(--primario); 
+            position: absolute; 
+            bottom: -15px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+        }
+
+        /* Grid de Categorías */
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 30px; 
+        }
+
+        .card { 
+            background: var(--blanco); 
+            border: none; 
+            overflow: hidden; 
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
+            border-radius: 8px; 
+            box-shadow: var(--sombra);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+
+        .img-container {
+            overflow: hidden;
+            height: 220px;
+        }
+
+        .card img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.05);
+        }
+
+        .card-info { 
+            padding: 25px; 
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-info h3 {
+            margin-top: 0;
+            font-size: 1.25rem;
+            color: var(--oscuro);
+            border-left: 4px solid var(--primario);
+            padding-left: 10px;
+        }
+
+        .card-info p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .btn-card { 
+            background: var(--oscuro); 
+            color: var(--blanco); 
+            padding: 12px 18px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            display: inline-block; 
+            text-align: center;
+            transition: 0.3s; 
+            font-size: 0.8rem; 
+            letter-spacing: 1px;
+            border-radius: 4px;
+        }
+
+        .btn-card:hover { 
+            background: var(--primario); 
+            color: var(--oscuro); 
+        }
+
+        /* Footer */
+        footer { 
+            text-align: center; 
+            padding: 40px; 
+            font-size: 0.85rem; 
+            color: #999; 
+            background: #f4f4f4;
+            margin-top: 50px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header { flex-direction: column; text-align: center; }
+            nav { margin-top: 15px; }
+            nav a { margin: 0 10px; }
+            .section-title { font-size: 1.6rem; }
+        }
     </style>
 </head>
 <body>
@@ -39,43 +190,58 @@
 
 <div class="container">
     <h2 class="section-title">Nuestras Líneas de Cajas</h2>
+    
     <div class="grid">
         <div class="card">
-            <img src="https://images.pexels.com/photos/16154505/pexels-photo-16154505.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Cajas Basculantes">
+            <div class="img-container">
+                <img src="https://images.pexels.com/photos/16154505/pexels-photo-16154505.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Cajas Basculantes Cantoni">
+            </div>
             <div class="card-info">
                 <h3>Cajas Basculantes</h3>
-                <p>Ingeniería Cantoni para volquetes trilateral y construcción pesada.</p>
-                <a href="cantoni.html" class="btn-card">CATÁLOGO CANTONI</a>
+                <p>Ingeniería italiana Cantoni para volquetes trilaterales y transporte de áridos en construcción pesada.</p>
+                <a href="cantoni.html" class="btn-card">VER CATÁLOGO CANTONI</a>
             </div>
         </div>
+
         <div class="card">
-            <img src="https://images.pexels.com/photos/93398/pexels-photo-93398.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Kits Furgon">
+            <div class="img-container">
+                <img src="https://images.pexels.com/photos/93398/pexels-photo-93398.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Furgones Liderkit">
+            </div>
             <div class="card-info">
                 <h3>Furgones en Kit</h3>
-                <p>Kits de aluminio y paneles sandwich de alta ligereza Liderkit.</p>
-                <a href="liderkit.html" class="btn-card">CATÁLOGO LIDERKIT</a>
+                <p>Paneles sandwich de alta ligereza y kits de aluminio listos para montar. Máxima eficiencia logística Liderkit.</p>
+                <a href="liderkit.html" class="btn-card">VER CATÁLOGO LIDERKIT</a>
             </div>
         </div>
+
         <div class="card">
-            <img src="https://images.pexels.com/photos/38271/truck-delivery-service-shipping-transport-38271.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Estructuras">
+            <div class="img-container">
+                <img src="https://images.pexels.com/photos/38271/truck-delivery-service-shipping-transport-38271.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Cajas Resma">
+            </div>
             <div class="card-info">
                 <h3>Cajas Estructurales</h3>
-                <p>Chasis reforzados y perfilería industrial oficial de Resma.</p>
-                <a href="resma.html" class="btn-card">CATÁLOGO RESMA</a>
+                <p>Chasis reforzados y perfilería industrial galvanizada. Soluciones oficiales de Resma para cargas exigentes.</p>
+                <a href="resma.html" class="btn-card">VER CATÁLOGO RESMA</a>
             </div>
         </div>
+
         <div class="card">
-            <img src="https://images.pexels.com/photos/2800121/pexels-photo-2800121.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Carrocerías Especiales">
+            <div class="img-container">
+                <img src="https://images.pexels.com/photos/2800121/pexels-photo-2800121.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Carrocerías Auxiliar Carrocera">
+            </div>
             <div class="card-info">
                 <h3>Carrocerías Especiales</h3>
-                <p>Cajas de lona Tauliner y furgones a medida Auxiliar Carrocera.</p>
-                <a href="auxiliar.html" class="btn-card">CATÁLOGO AUXILIAR</a>
+                <p>Cajas de lona tipo Tauliner, furgones a medida y proyectos especiales con el sello de Auxiliar Carrocera.</p>
+                <a href="auxiliar.html" class="btn-card">VER CATÁLOGO AUXILIAR</a>
             </div>
         </div>
     </div>
 </div>
 
-<footer>&copy; 2024 Carrocerías Prefabricadas - Polígono Industrial Torrehierro.</footer>
+<footer>
+    &copy; 2024 Carrocerías Prefabricadas S.L. <br> 
+    Polígono Industrial Torrehierro, Talavera de la Reina.
+</footer>
 
 </body>
 </html>
