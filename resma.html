@@ -3,50 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RESMA España | Componentes de Carrocería</title>
+    <title>RESMA | Carrocerías y Estructuras</title>
     <style>
         :root { --primario: #ffcc00; --oscuro: #1a1a1a; --gris: #f4f4f4; }
         body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333; }
-        header { background: var(--oscuro); color: white; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--primario); }
+        header { background: var(--oscuro); color: white; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--primario); position: sticky; top: 0; z-index: 1000; }
         .logo { font-size: 1.5rem; font-weight: bold; text-decoration: none; color: white; }
         .logo span { color: var(--primario); }
         nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; }
-        .container { padding: 60px 5%; max-width: 1200px; margin: auto; }
-        .brand-banner { background: #eee; padding: 40px; text-align: center; border-left: 10px solid var(--primario); margin-bottom: 40px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .card { border: 1px solid #ddd; padding: 20px; background: white; }
-        .btn-consulta { background: var(--oscuro); color: white; padding: 10px 20px; text-decoration: none; display: inline-block; margin-top: 10px; font-weight: bold; }
-        footer { text-align: center; padding: 40px; color: #888; }
+        .hero-brand { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1586191582151-f73872dfd183?auto=format&fit=crop&q=80&w=1200'); background-size: cover; color: white; padding: 80px 5%; text-align: center; }
+        .container { padding: 40px 5%; max-width: 1200px; margin: auto; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+        .card { border: 1px solid #ddd; border-radius: 8px; overflow: hidden; background: white; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); border-color: var(--primario); }
+        .card img { width: 100%; height: 250px; object-fit: cover; }
+        .card-body { padding: 25px; }
+        .btn-pedido { background: var(--oscuro); color: white; padding: 12px 25px; text-decoration: none; font-weight: bold; display: block; text-align: center; }
+        .btn-pedido:hover { background: var(--primario); color: var(--oscuro); }
+        footer { text-align: center; padding: 40px; color: #888; background: var(--gris); }
     </style>
 </head>
 <body>
-<header>
-    <a href="index.html" class="logo">CARROCERÍAS<span>PREFABRICADAS</span></a>
-    <nav><a href="index.html">Inicio</a><a href="categorias.html">Categorías</a></nav>
-</header>
-<div class="container">
-    <div class="brand-banner">
-        <h1>RESMA ESPAÑA</h1>
-        <p>Líderes en componentes y accesorios para la fabricación de carrocerías industriales.</p>
+    <header>
+        <a href="index.html" class="logo">CARROCERÍAS<span>PREFABRICADAS</span></a>
+        <nav><a href="index.html">Inicio</a><a href="categorias.html">Categorías</a></nav>
+    </header>
+    <div class="hero-brand">
+        <h1>RESMA: SOLUCIONES ESTRUCTURALES</h1>
+        <p>Cajas industriales fabricadas con perfilería de alta resistencia.</p>
     </div>
-    <div class="grid">
-        <div class="card">
-            <h3>Cierres de Acero Inoxidable</h3>
-            <p>Sistemas de cierre para furgones y camiones, resistentes a la corrosión.</p>
-            <a href="mailto:info@tuweb.com" class="btn-consulta">Pedir Información</a>
-        </div>
-        <div class="card">
-            <h3>Bisagras Reforzadas</h3>
-            <p>Diseñadas para puertas traseras de gran tonelaje y uso intensivo.</p>
-            <a href="mailto:info@tuweb.com" class="btn-consulta">Pedir Información</a>
-        </div>
-        <div class="card">
-            <h3>Perfiles de Contorno</h3>
-            <p>Estructuras de aluminio y acero para el remate de cajas industriales.</p>
-            <a href="mailto:info@tuweb.com" class="btn-consulta">Pedir Información</a>
+    <div class="container">
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&q=80&w=800" alt="Caja Abierta">
+                <div class="card-body">
+                    <h3>Cajas Abiertas y Semirremolques</h3>
+                    <p>Estructuras de acero galvanizado y aluminio con laterales abatibles, ideales para carga general y construcción.</p>
+                    <a href="mailto:info@carrocerias.io" class="btn-pedido">SOLICITAR PRESUPUESTO</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1591768793355-74d7c526cc18?auto=format&fit=crop&q=80&w=800" alt="Caja Cerrada">
+                <div class="card-body">
+                    <h3>Cajas Cerradas Autoportantes</h3>
+                    <p>Cajas de alta durabilidad con herrajes Resma de acero inoxidable, diseñadas para uso intensivo en logística.</p>
+                    <a href="mailto:info@carrocerias.io" class="btn-pedido">SOLICITAR PRESUPUESTO</a>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-<footer>&copy; 2024 Distribuidor Autorizado Resma</footer>
+    <footer>&copy; 2024 Distribuidor Especializado Resma</footer>
 </body>
 </html>
