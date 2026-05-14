@@ -5,75 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrocerías Prefabricadas | Especialistas en Cajas</title>
     <style>
-        :root {
-            --primario: #ffcc00;
-            --oscuro: #1a1a1a;
-            --gris: #f4f4f4;
-            --blanco: #ffffff;
-        }
-
+        :root { --primario: #ffcc00; --oscuro: #1a1a1a; --gris: #f4f4f4; --blanco: #ffffff; }
         body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333; scroll-behavior: smooth; }
-
-        /* Navegación */
-        header {
-            background: var(--oscuro);
-            color: var(--blanco);
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 3px solid var(--primario);
-        }
-
-        /* Logo con enlace a Home */
+        header { background: var(--oscuro); color: var(--blanco); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid var(--primario); }
         .logo-link { text-decoration: none; color: inherit; }
-        .logo { font-size: 1.5rem; font-weight: bold; text-transform: uppercase; cursor: pointer; }
+        .logo { font-size: 1.5rem; font-weight: bold; text-transform: uppercase; }
         .logo span { color: var(--primario); }
-
         nav a { color: var(--blanco); text-decoration: none; margin-left: 20px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; transition: 0.3s; }
         nav a:hover { color: var(--primario); }
-
-        /* Hero */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.pexels.com/photos/2199293/pexels-photo-2199293.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-            background-size: cover;
-            background-position: center;
-            height: 500px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: var(--blanco);
-            text-align: center;
-            padding: 0 20px;
-        }
-        .hero h1 { font-size: 3rem; margin: 0 0 10px 0; text-transform: uppercase; }
-
-        /* Contenedores */
-        .container { padding: 80px 5%; max-width: 1200px; margin: auto; }
+        .hero { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.pexels.com/photos/2199293/pexels-photo-2199293.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); background-size: cover; background-position: center; height: 450px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: var(--blanco); text-align: center; padding: 0 20px; }
+        .container { padding: 60px 5%; max-width: 1200px; margin: auto; }
         .section-title { text-align: center; margin-bottom: 50px; text-transform: uppercase; position: relative; }
         .section-title::after { content: ''; width: 80px; height: 4px; background: var(--primario); position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); }
-
-        /* Grid */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
         .card { background: var(--blanco); border: 1px solid #ddd; overflow: hidden; transition: 0.4s; border-radius: 4px; }
         .card:hover { transform: translateY(-10px); border-color: var(--primario); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .card img { width: 100%; height: 250px; object-fit: cover; }
-        .card-info { padding: 25px; }
-        .card-info h3 { margin: 0 0 15px 0; color: var(--oscuro); font-size: 1.3rem; }
-
-        .btn-card { background: var(--oscuro); color: var(--blanco); padding: 10px 20px; text-decoration: none; font-weight: bold; display: inline-block; transition: 0.3s; }
+        .card img { width: 100%; height: 200px; object-fit: cover; }
+        .card-info { padding: 20px; }
+        .btn-card { background: var(--oscuro); color: var(--blanco); padding: 10px 20px; text-decoration: none; font-weight: bold; display: inline-block; transition: 0.3s; font-size: 0.9rem; }
         .btn-card:hover { background: var(--primario); color: var(--oscuro); }
-
-        /* Contacto */
-        .contacto-box { background: var(--oscuro); color: var(--blanco); padding: 60px; border-radius: 8px; text-align: center; }
-        .info-contacto { margin: 30px 0; font-size: 1.1rem; }
-        .btn-contacto { background: var(--primario); color: var(--oscuro); padding: 18px 40px; text-decoration: none; font-weight: bold; display: inline-block; border-radius: 4px; transition: 0.3s; }
-
-        footer { text-align: center; padding: 40px; font-size: 0.85rem; color: #777; background: #f9f9f9; }
+        .marcas-section { background: var(--gris); padding: 60px 5%; text-align: center; }
+        .marcas-grid { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 30px; margin-top: 30px; }
+        .marca-item { font-size: 1.4rem; font-weight: 900; color: #666; text-decoration: none; transition: 0.3s; padding: 10px 20px; border: 2px solid transparent; }
+        .marca-item:hover { color: var(--oscuro); border-color: var(--primario); }
+        .contacto-box { background: var(--oscuro); color: var(--blanco); padding: 50px; border-radius: 8px; text-align: center; margin-top: 40px; }
+        footer { text-align: center; padding: 30px; font-size: 0.85rem; color: #777; background: #fff; }
     </style>
 </head>
 <body>
@@ -91,46 +47,69 @@
 </header>
 
 <section class="hero">
-    <h1>VENTA DE CARROCERÍAS</h1>
-    <p>Soluciones industriales de alta resistencia para transporte.</p>
-    <a href="categorias.html" class="btn-contacto" style="margin-top: 25px;">VER CATÁLOGO</a>
+    <h1>VENTA DE CARROCERÍAS EN TORREHIERRO</h1>
+    <p>Distribuidores líderes de cajas basculantes, furgones y estructuras industriales.</p>
+    <a href="categorias.html" class="btn-card" style="background:var(--primario); color:var(--oscuro); padding: 15px 30px; margin-top: 20px; border-radius: 4px;">VER CATÁLOGO COMPLETO</a>
 </section>
 
-<div class="container" id="productos">
-    <h2 class="section-title">Nuestras Cajas</h2>
+<div class="container">
+    <h2 class="section-title">Soluciones Destacadas</h2>
     <div class="grid">
         <div class="card">
-            <img src="https://images.pexels.com/photos/2800121/pexels-photo-2800121.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Caja Basculante">
+            <img src="https://images.pexels.com/photos/10133334/pexels-photo-10133334.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Basculantes">
             <div class="card-info">
-                <h3>Basculantes Cantoni</h3>
-                <p>Cajas volquetes de ingeniería italiana para construcción.</p>
-                <a href="cantoni.html" class="btn-card">VER MÁS</a>
+                <h3>Cajas Basculantes</h3>
+                <p>Ingeniería Cantoni para volquetes ligeros y pesados.</p>
+                <a href="cantoni.html" class="btn-card">VER CANTONI</a>
             </div>
         </div>
         <div class="card">
-            <img src="https://images.pexels.com/photos/4246120/pexels-photo-4246120.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Furgon Kit">
+            <img src="https://images.pexels.com/photos/4246120/pexels-photo-4246120.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Furgon">
             <div class="card-info">
-                <h3>Kits Liderkit</h3>
-                <p>Furgones de aluminio y sandwich listos para montar.</p>
-                <a href="liderkit.html" class="btn-card">VER MÁS</a>
+                <h3>Kits de Furgón</h3>
+                <p>Cajas de aluminio y paneles sandwich de Liderkit.</p>
+                <a href="liderkit.html" class="btn-card">VER LIDERKIT</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://images.pexels.com/photos/1105676/pexels-photo-1105676.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Estructuras">
+            <div class="card-info">
+                <h3>Cajas Estructurales</h3>
+                <p>Máxima robustez con la perfilería oficial de Resma.</p>
+                <a href="resma.html" class="btn-card">VER RESMA</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://images.pexels.com/photos/1554654/pexels-photo-1554654.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Especiales">
+            <div class="card-info">
+                <h3>Cajas Especiales</h3>
+                <p>Tauliner y furgones a medida de Auxiliar Carrocera.</p>
+                <a href="auxiliar.html" class="btn-card">VER AUXILIAR</a>
             </div>
         </div>
     </div>
 </div>
+
+<section class="marcas-section" id="marcas">
+    <h2 class="section-title">Marcas Oficiales</h2>
+    <div class="marcas-grid">
+        <a href="cantoni.html" class="marca-item">CANTONI</a>
+        <a href="liderkit.html" class="marca-item">LIDERKIT</a>
+        <a href="resma.html" class="marca-item">RESMA</a>
+        <a href="auxiliar.html" class="marca-item">AUXILIAR</a>
+    </div>
+</section>
 
 <div class="container" id="contacto">
     <div class="contacto-box">
-        <h2 class="section-title" style="color:white; margin-top: 0;">Contacto Directo</h2>
-        <div class="info-contacto">
-            <p><strong>📞 Teléfono:</strong> 658 297 095</p>
-            <p><strong>📧 Email:</strong> sanchezreneo@gmail.com</p>
-            <p>📍 Polígono Industrial Torrehierro</p>
-        </div>
-        <a href="https://wa.me/34658297095" class="btn-contacto">ENVIAR WHATSAPP</a>
+        <h2 style="color:white; margin-top: 0; text-transform: uppercase;">Atención al Cliente</h2>
+        <p>Polígono Industrial Torrehierro | 📞 658 297 095</p>
+        <p>📧 sanchezreneo@gmail.com</p>
+        <a href="https://wa.me/34658297095" class="btn-card" style="background:var(--primario); color:var(--oscuro); margin-top: 20px;">CONTACTAR POR WHATSAPP</a>
     </div>
 </div>
 
-<footer>&copy; 2024 Carrocerías Prefabricadas. Torrehierro.</footer>
+<footer>&copy; 2024 Carrocerías Prefabricadas - Torrehierro.</footer>
 
 </body>
 </html>
