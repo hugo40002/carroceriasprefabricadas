@@ -1,20 +1,64 @@
-<section class="hero"><h1>LIDERKIT</h1><p>Líderes en kits de furgones de aluminio y sandwich.</p></section>
-
-<div class="grid">
-    <div class="card">
-        <img src="https://images.pexels.com/photos/1554654/pexels-photo-1554654.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Kit Aluminio">
-        <div class="card-info">
-            <h3>Furgones de Aluminio</h3>
-            <p>Kits ligeros para paquetería y transporte de larga distancia.</p>
-            <a href="https://wa.me/34658297095" class="btn-card">CONSULTAR</a>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIDERKIT | Cajas en Kit</title>
+    <style>
+        :root { --primario: #ffcc00; --oscuro: #1a1a1a; --gris: #f4f4f4; --blanco: #ffffff; }
+        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333; scroll-behavior: smooth; }
+        header { background: var(--oscuro); color: var(--blanco); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid var(--primario); }
+        .logo-link { text-decoration: none; color: inherit; }
+        .logo { font-size: 1.5rem; font-weight: bold; text-transform: uppercase; }
+        .logo span { color: var(--primario); }
+        nav a { color: var(--blanco); text-decoration: none; margin-left: 20px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; transition: 0.3s; }
+        nav a:hover { color: var(--primario); }
+        .hero { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.pexels.com/photos/1554654/pexels-photo-1554654.jpeg?auto=compress&cs=tinysrgb&w=1200'); background-size: cover; background-position: center; height: 300px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: var(--blanco); text-align: center; }
+        .container { padding: 60px 5%; max-width: 1200px; margin: auto; }
+        .section-title { text-align: center; margin-bottom: 50px; text-transform: uppercase; position: relative; }
+        .section-title::after { content: ''; width: 80px; height: 4px; background: var(--primario); position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: var(--blanco); border: 1px solid #ddd; overflow: hidden; transition: 0.4s; border-radius: 4px; }
+        .card img { width: 100%; height: 250px; object-fit: cover; }
+        .card-info { padding: 25px; }
+        .btn-card { background: var(--oscuro); color: var(--blanco); padding: 10px 20px; text-decoration: none; font-weight: bold; display: inline-block; transition: 0.3s; }
+        .btn-card:hover { background: var(--primario); color: var(--oscuro); }
+        .contacto-box { background: var(--oscuro); color: var(--blanco); padding: 40px; border-radius: 8px; text-align: center; margin-top: 50px; }
+        footer { text-align: center; padding: 40px; font-size: 0.85rem; color: #777; background: #f9f9f9; }
+    </style>
+</head>
+<body>
+<header>
+    <a href="index.html" class="logo-link"><div class="logo">CARROCERÍAS<span>PREFABRICADAS</span></div></a>
+    <nav><a href="index.html">Inicio</a><a href="categorias.html">Categorías</a></nav>
+</header>
+<section class="hero"><h1>LIDERKIT</h1><p>Kits de carrocería ligeros y resistentes para montaje rápido.</p></section>
+<div class="container">
+    <h2 class="section-title">Cajas en Kit (CKD)</h2>
+    <div class="grid">
+        <div class="card">
+            <img src="https://images.pexels.com/photos/4246120/pexels-photo-4246120.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Furgon Aluminio">
+            <div class="card-info">
+                <h3>Kits de Aluminio</h3>
+                <p>Cajas de aluminio ligeras para maximizar la carga útil del vehículo.</p>
+                <a href="https://wa.me/34658297095" class="btn-card">PRESUPUESTO</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://images.pexels.com/photos/2800121/pexels-photo-2800121.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Panel Sandwich">
+            <div class="card-info">
+                <h3>Paneles Sandwich</h3>
+                <p>Aislamiento térmico y resistencia para transporte de paquetería e isotermos.</p>
+                <a href="https://wa.me/34658297095" class="btn-card">PRESUPUESTO</a>
+            </div>
         </div>
     </div>
-    <div class="card">
-        <img src="https://images.pexels.com/photos/2800121/pexels-photo-2800121.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Sandwich">
-        <div class="card-info">
-            <h3>Cajas Sandwich (CKD)</h3>
-            <p>Paneles isotermos listos para montar en cualquier chasis ligero.</p>
-            <a href="https://wa.me/34658297095" class="btn-card">CONSULTAR</a>
-        </div>
+    <div class="contacto-box">
+        <h3>Contacta con nosotros</h3>
+        <p>Polígono Industrial Torrehierro | 658 297 095</p>
+        <a href="https://wa.me/34658297095" class="btn-card" style="background:var(--primario); color:var(--oscuro);">WHATSAPP</a>
     </div>
 </div>
+<footer>&copy; 2024 Carrocerías Prefabricadas - Torrehierro.</footer>
+</body>
+</html>
