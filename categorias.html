@@ -3,70 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Categorías y Marcas | Carrocerías Prefabricadas</title>
+    <title>Categorías | Carrocerías Prefabricadas</title>
     <style>
-        :root {
-            --primario: #ffcc00;
-            --oscuro: #1a1a1a;
-            --gris: #f4f4f4;
-        }
-
-        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333; scroll-behavior: smooth; }
-
-        /* Navegación - Idéntica a tu Index */
-        header {
-            background: var(--oscuro);
-            color: white;
-            padding: 20px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 3px solid var(--primario);
-        }
-
-        .logo { font-size: 1.5rem; font-weight: bold; }
+        /* COPIAMOS EXACTAMENTE EL MISMO CSS DEL INDEX */
+        :root { --primario: #ffcc00; --oscuro: #1a1a1a; --gris: #f4f4f4; --blanco: #ffffff; }
+        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333; }
+        header { background: var(--oscuro); color: var(--blanco); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--primario); position: sticky; top: 0; z-index: 1000; }
+        .logo-link { text-decoration: none; color: inherit; }
+        .logo { font-size: 1.5rem; font-weight: bold; text-transform: uppercase; }
         .logo span { color: var(--primario); }
-
-        nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; }
-        nav a:hover { color: var(--primario); }
-
-        /* Contenedores */
-        .container { padding: 60px 5%; max-width: 1200px; margin: auto; }
-        .section-title { text-align: center; margin-bottom: 40px; text-transform: uppercase; position: relative; }
-        .section-title::after { content: ''; width: 60px; height: 40px; border-bottom: 3px solid var(--primario); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
-
-        /* Grid de Categorías (Marcas) */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .card { background: white; border: 1px solid #ddd; overflow: hidden; transition: 0.3s; display: flex; flex-direction: column; }
-        .card:hover { transform: translateY(-5px); border-color: var(--primario); }
-        .card img { width: 100%; height: 220px; object-fit: cover; }
-        .card-info { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
-        .card-info h3 { margin: 0 0 10px 0; font-size: 1.2rem; color: var(--oscuro); }
-        
-        /* Botones de enlace */
-        .btn-ver { 
-            background: var(--oscuro); 
-            color: white; 
-            padding: 12px; 
-            text-decoration: none; 
-            text-align: center; 
-            font-weight: bold; 
-            font-size: 0.8rem; 
-            margin-top: 15px; 
-            transition: 0.3s;
-        }
-        .btn-ver:hover { background: var(--primario); color: var(--oscuro); }
-
-        footer { text-align: center; padding: 40px; font-size: 0.8rem; color: #888; border-top: 1px solid #eee; }
+        nav a { color: var(--blanco); text-decoration: none; margin-left: 20px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; }
+        .container { padding: 80px 5%; max-width: 1200px; margin: auto; }
+        .section-title { text-align: center; margin-bottom: 50px; text-transform: uppercase; position: relative; }
+        .section-title::after { content: ''; width: 80px; height: 4px; background: var(--primario); position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: var(--blanco); border: 1px solid #ddd; overflow: hidden; transition: 0.4s; border-radius: 4px; }
+        .card img { width: 100%; height: 250px; object-fit: cover; }
+        .card-info { padding: 25px; }
+        .btn-card { background: var(--oscuro); color: var(--blanco); padding: 10px 20px; text-decoration: none; font-weight: bold; display: inline-block; transition: 0.3s; }
+        footer { text-align: center; padding: 40px; font-size: 0.85rem; color: #777; }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo">CARROCERÍAS<span>PREFABRICADAS</span></div>
+    <a href="index.html" class="logo-link">
+        <div class="logo">CARROCERÍAS<span>PREFABRICADAS</span></div>
+    </a>
     <nav>
         <a href="index.html">Inicio</a>
         <a href="categorias.html" style="color: var(--primario);">Categorías</a> 
@@ -76,51 +39,36 @@
 </header>
 
 <div class="container">
-    <h2 class="section-title">Categorías por Fabricante</h2>
-    <p style="text-align: center; margin-bottom: 40px;">Seleccione una marca para ver los componentes y soluciones específicas.</p>
-    
+    <h2 class="section-title">Líneas de Cajas</h2>
     <div class="grid">
         <div class="card">
-            <img src="https://www.cantoni.it/public/prodotti/jolly-light/jolly-light-1.jpg" alt="Cantoni Italia">
+            <img src="https://images.pexels.com/photos/1105676/pexels-photo-1105676.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Resma">
             <div class="card-info">
-                <h3>CANTONI (Italia)</h3>
-                <p>Equipos basculantes y sistemas hidráulicos de la gama Jolly. Tecnología italiana para vehículos ligeros.</p>
-                <a href="cantoni.html" class="btn-ver">VER CATÁLOGO CANTONI</a>
+                <h3>Resma</h3>
+                <p>Cajas estructurales y perfiles de alta durabilidad.</p>
+                <a href="resma.html" class="btn-card">IR AL CATÁLOGO</a>
             </div>
         </div>
-
         <div class="card">
-            <img src="https://liderkit.com/wp-content/uploads/2019/02/kit-aluminio.jpg" alt="Liderkit">
+            <img src="https://images.pexels.com/photos/1554654/pexels-photo-1554654.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Liderkit">
             <div class="card-info">
-                <h3>LIDERKIT</h3>
-                <p>Especialistas en Kits CKD. Paneles sándwich, aluminio y poliéster de fácil montaje.</p>
-                <a href="liderkit.html" class="btn-ver">VER CATÁLOGO LIDERKIT</a>
+                <h3>Liderkit</h3>
+                <p>Kits CKD, aluminio y paneles sandwich para transporte.</p>
+                <a href="liderkit.html" class="btn-card">IR AL CATÁLOGO</a>
             </div>
         </div>
-
         <div class="card">
-            <img src="https://www.resma.es/wp-content/uploads/2018/10/herrajes-slider.jpg" alt="Resma España">
+            <img src="https://images.pexels.com/photos/2199293/pexels-photo-2199293.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Cantoni">
             <div class="card-info">
-                <h3>RESMA España</h3>
-                <p>Componentes estructurales, herrajes de acero inoxidable y cierres de seguridad industrial.</p>
-                <a href="resma.html" class="btn-ver">VER CATÁLOGO RESMA</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="https://auxiliarcarrocera.com/wp-content/uploads/2021/03/aux-carrocera.jpg" alt="Auxiliar Carrocera">
-            <div class="card-info">
-                <h3>AUXILIAR CARROCERA</h3>
-                <p>Catálogo completo de accesorios y soluciones auxiliares para el carrozado profesional.</p>
-                <a href="auxiliar.html" class="btn-ver">VER CATÁLOGO AUXILIAR</a>
+                <h3>Cantoni</h3>
+                <p>Especialistas en basculantes trilateral de alta gama.</p>
+                <a href="cantoni.html" class="btn-card">IR AL CATÁLOGO</a>
             </div>
         </div>
     </div>
 </div>
 
-<footer>
-    &copy; 2026 Carrocerías Prefabricadas. Todos los derechos reservados.
-</footer>
+<footer>&copy; 2024 Carrocerías Prefabricadas - Torrehierro.</footer>
 
 </body>
 </html>
