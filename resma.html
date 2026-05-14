@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESMA España | Componentes de Carrocería</title>
+    <style>
+        :root { --primario: #ffcc00; --oscuro: #1a1a1a; --gris: #f4f4f4; }
+        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333; }
+        header { background: var(--oscuro); color: white; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--primario); }
+        .logo { font-size: 1.5rem; font-weight: bold; text-decoration: none; color: white; }
+        .logo span { color: var(--primario); }
+        nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; }
+        .container { padding: 60px 5%; max-width: 1200px; margin: auto; }
+        .brand-banner { background: #eee; padding: 40px; text-align: center; border-left: 10px solid var(--primario); margin-bottom: 40px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { border: 1px solid #ddd; padding: 20px; background: white; }
+        .btn-consulta { background: var(--oscuro); color: white; padding: 10px 20px; text-decoration: none; display: inline-block; margin-top: 10px; font-weight: bold; }
+        footer { text-align: center; padding: 40px; color: #888; }
+    </style>
+</head>
+<body>
+<header>
+    <a href="index.html" class="logo">CARROCERÍAS<span>PREFABRICADAS</span></a>
+    <nav><a href="index.html">Inicio</a><a href="categorias.html">Categorías</a></nav>
+</header>
+<div class="container">
+    <div class="brand-banner">
+        <h1>RESMA ESPAÑA</h1>
+        <p>Líderes en componentes y accesorios para la fabricación de carrocerías industriales.</p>
+    </div>
+    <div class="grid">
+        <div class="card">
+            <h3>Cierres de Acero Inoxidable</h3>
+            <p>Sistemas de cierre para furgones y camiones, resistentes a la corrosión.</p>
+            <a href="mailto:info@tuweb.com" class="btn-consulta">Pedir Información</a>
+        </div>
+        <div class="card">
+            <h3>Bisagras Reforzadas</h3>
+            <p>Diseñadas para puertas traseras de gran tonelaje y uso intensivo.</p>
+            <a href="mailto:info@tuweb.com" class="btn-consulta">Pedir Información</a>
+        </div>
+        <div class="card">
+            <h3>Perfiles de Contorno</h3>
+            <p>Estructuras de aluminio y acero para el remate de cajas industriales.</p>
+            <a href="mailto:info@tuweb.com" class="btn-consulta">Pedir Información</a>
+        </div>
+    </div>
+</div>
+<footer>&copy; 2024 Distribuidor Autorizado Resma</footer>
+</body>
+</html>
