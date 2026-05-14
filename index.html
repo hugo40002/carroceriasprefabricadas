@@ -28,7 +28,9 @@
             border-bottom: 3px solid var(--primario);
         }
 
-        .logo { font-size: 1.5rem; font-weight: bold; text-transform: uppercase; }
+        /* Logo con enlace a Home */
+        .logo-link { text-decoration: none; color: inherit; }
+        .logo { font-size: 1.5rem; font-weight: bold; text-transform: uppercase; cursor: pointer; }
         .logo span { color: var(--primario); }
 
         nav a { color: var(--blanco); text-decoration: none; margin-left: 20px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; transition: 0.3s; }
@@ -36,7 +38,7 @@
 
         /* Hero */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070&auto=format&fit=crop');
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.pexels.com/photos/2199293/pexels-photo-2199293.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
             background-size: cover;
             background-position: center;
             height: 500px;
@@ -48,39 +50,28 @@
             text-align: center;
             padding: 0 20px;
         }
-        .hero h1 { font-size: 3rem; margin-bottom: 10px; text-transform: uppercase; }
-        .hero p { font-size: 1.2rem; max-width: 700px; }
+        .hero h1 { font-size: 3rem; margin: 0 0 10px 0; text-transform: uppercase; }
 
         /* Contenedores */
         .container { padding: 80px 5%; max-width: 1200px; margin: auto; }
         .section-title { text-align: center; margin-bottom: 50px; text-transform: uppercase; position: relative; }
         .section-title::after { content: ''; width: 80px; height: 4px; background: var(--primario); position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); }
 
-        /* Grid de Cajas Destacadas */
+        /* Grid */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .card { background: var(--blanco); border: 1px solid #ddd; overflow: hidden; transition: 0.4s; border-radius: 4px; }
         .card:hover { transform: translateY(-10px); border-color: var(--primario); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
         .card img { width: 100%; height: 250px; object-fit: cover; }
         .card-info { padding: 25px; }
         .card-info h3 { margin: 0 0 15px 0; color: var(--oscuro); font-size: 1.3rem; }
-        .card-info p { color: #666; font-size: 0.95rem; margin-bottom: 20px; }
 
         .btn-card { background: var(--oscuro); color: var(--blanco); padding: 10px 20px; text-decoration: none; font-weight: bold; display: inline-block; transition: 0.3s; }
         .btn-card:hover { background: var(--primario); color: var(--oscuro); }
 
-        /* Sección Marcas */
-        .marcas-section { background: var(--gris); padding: 80px 5%; text-align: center; }
-        .marcas-grid { display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 40px; margin-top: 40px; }
-        .marca-item { font-size: 1.8rem; font-weight: 900; color: #999; text-decoration: none; transition: 0.3s; }
-        .marca-item:hover { color: var(--oscuro); transform: scale(1.1); }
-
         /* Contacto */
         .contacto-box { background: var(--oscuro); color: var(--blanco); padding: 60px; border-radius: 8px; text-align: center; }
-        .contacto-box h2 { color: var(--blanco); margin-bottom: 20px; }
         .info-contacto { margin: 30px 0; font-size: 1.1rem; }
-        .info-contacto p { margin: 10px 0; }
         .btn-contacto { background: var(--primario); color: var(--oscuro); padding: 18px 40px; text-decoration: none; font-weight: bold; display: inline-block; border-radius: 4px; transition: 0.3s; }
-        .btn-contacto:hover { background: var(--blanco); transform: scale(1.05); }
 
         footer { text-align: center; padding: 40px; font-size: 0.85rem; color: #777; background: #f9f9f9; }
     </style>
@@ -88,7 +79,9 @@
 <body>
 
 <header>
-    <div class="logo">CARROCERÍAS<span>PREFABRICADAS</span></div>
+    <a href="index.html" class="logo-link">
+        <div class="logo">CARROCERÍAS<span>PREFABRICADAS</span></div>
+    </a>
     <nav>
         <a href="index.html">Inicio</a>
         <a href="categorias.html">Categorías</a> 
@@ -98,67 +91,46 @@
 </header>
 
 <section class="hero">
-    <h1>VENTA DE CARROCERÍAS ESTRUCTURALES</h1>
-    <p>Distribuidores oficiales de las mejores cajas industriales para transporte ligero y pesado.</p>
-    <a href="categorias.html" class="btn-contacto" style="margin-top: 25px;">EXPLORAR CATÁLOGO</a>
+    <h1>VENTA DE CARROCERÍAS</h1>
+    <p>Soluciones industriales de alta resistencia para transporte.</p>
+    <a href="categorias.html" class="btn-contacto" style="margin-top: 25px;">VER CATÁLOGO</a>
 </section>
 
 <div class="container" id="productos">
-    <h2 class="section-title">Nuestras Soluciones en Cajas</h2>
+    <h2 class="section-title">Nuestras Cajas</h2>
     <div class="grid">
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1591768793355-74d7c526cc18?q=80&w=800&auto=format&fit=crop" alt="Cajas Basculantes">
+            <img src="https://images.pexels.com/photos/2800121/pexels-photo-2800121.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Caja Basculante">
             <div class="card-info">
-                <h3>Carrocerías Basculantes</h3>
-                <p>Cajas volquete de alta resistencia para construcción y áridos. Distribución oficial gama Cantoni.</p>
-                <a href="cantoni.html" class="btn-card">VER DETALLES</a>
+                <h3>Basculantes Cantoni</h3>
+                <p>Cajas volquetes de ingeniería italiana para construcción.</p>
+                <a href="cantoni.html" class="btn-card">VER MÁS</a>
             </div>
         </div>
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=800&auto=format&fit=crop" alt="Kits Furgón">
+            <img src="https://images.pexels.com/photos/4246120/pexels-photo-4246120.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Furgon Kit">
             <div class="card-info">
-                <h3>Furgones en Kit (CKD)</h3>
-                <p>Cajas cerradas de aluminio y sandwich de Liderkit. Ligereza y montaje rápido para logística.</p>
-                <a href="liderkit.html" class="btn-card">VER DETALLES</a>
-            </div>
-        </div>
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=800&auto=format&fit=crop" alt="Cajas Abiertas">
-            <div class="card-info">
-                <h3>Cajas Abiertas y Lonas</h3>
-                <p>Soluciones estructurales Resma y Auxiliar para carga general y máxima accesibilidad lateral.</p>
-                <a href="resma.html" class="btn-card">VER DETALLES</a>
+                <h3>Kits Liderkit</h3>
+                <p>Furgones de aluminio y sandwich listos para montar.</p>
+                <a href="liderkit.html" class="btn-card">VER MÁS</a>
             </div>
         </div>
     </div>
 </div>
-
-<section class="marcas-section" id="marcas">
-    <h2 class="section-title">Marcas que distribuimos</h2>
-    <div class="marcas-grid">
-        <a href="cantoni.html" class="marca-item">CANTONI</a>
-        <a href="liderkit.html" class="marca-item">LIDERKIT</a>
-        <a href="resma.html" class="marca-item">RESMA</a>
-        <a href="auxiliar.html" class="marca-item">AUXILIAR</a>
-    </div>
-</section>
 
 <div class="container" id="contacto">
     <div class="contacto-box">
-        <h2 class="section-title" style="color:white; margin-top: 0;">Presupuesto Inmediato</h2>
+        <h2 class="section-title" style="color:white; margin-top: 0;">Contacto Directo</h2>
         <div class="info-contacto">
             <p><strong>📞 Teléfono:</strong> 658 297 095</p>
             <p><strong>📧 Email:</strong> sanchezreneo@gmail.com</p>
-            <p>📍 Polígono Industrial - Atención Técnica Especializada</p>
+            <p>📍 Polígono Industrial Torrehierro</p>
         </div>
-        <a href="https://wa.me/34658297095?text=Hola,%20solicito%20presupuesto%20para%20una%20carrocería" class="btn-contacto">CONTACTAR POR WHATSAPP</a>
+        <a href="https://wa.me/34658297095" class="btn-contacto">ENVIAR WHATSAPP</a>
     </div>
 </div>
 
-<footer>
-    &copy; 2024 Carrocerías Prefabricadas. Todos los derechos reservados.<br>
-    Venta y distribución técnica de cajas industriales.
-</footer>
+<footer>&copy; 2024 Carrocerías Prefabricadas. Torrehierro.</footer>
 
 </body>
 </html>
