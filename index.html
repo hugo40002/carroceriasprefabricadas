@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrocerías Prefabricadas | Especialistas en Cajas y Furgones</title>
+    <title>Carrocerías Prefabricadas | Distribución Industrial de Transporte</title>
     <style>
         :root { 
             --primario: #ffcc00; 
             --oscuro: #1a1a1a; 
-            --gris: #f4f4f4; 
+            --gris: #f8f9fa; 
             --blanco: #ffffff; 
-            --sombra: 0 10px 20px rgba(0,0,0,0.08);
+            --sombra: 0 15px 30px rgba(0,0,0,0.06);
+            --borde: #eaeaea;
         }
 
         body { 
@@ -22,7 +23,6 @@
             scroll-behavior: smooth; 
         }
 
-        /* Navegación */
         header { 
             background: var(--oscuro); 
             color: var(--blanco); 
@@ -43,19 +43,18 @@
         nav a { 
             color: var(--blanco); 
             text-decoration: none; 
-            margin-left: 20px; 
+            margin-left: 25px; 
             font-weight: bold; 
-            font-size: 0.8rem; 
+            font-size: 0.85rem; 
             text-transform: uppercase; 
             transition: 0.3s; 
         }
         nav a:hover { color: var(--primario); }
 
-        /* Hero Section */
+        /* Contenedor del Banner optimizado para el iframe de YouTube */
         .hero { 
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
-                        url('https://images.pexels.com/photos/2199293/pexels-photo-2199293.jpeg?auto=compress&cs=tinysrgb&w=1260') no-repeat center center/cover; 
-            height: 550px; 
+            position: relative;
+            height: 600px; 
             display: flex; 
             flex-direction: column; 
             justify-content: center; 
@@ -63,78 +62,128 @@
             color: var(--blanco); 
             text-align: center; 
             padding: 0 20px; 
+            overflow: hidden;
+            background: var(--oscuro);
         }
 
-        .hero h1 { font-size: 3rem; margin-bottom: 10px; text-transform: uppercase; }
-        .hero p { font-size: 1.2rem; max-width: 700px; margin-bottom: 30px; }
-
-        /* Contenedores y Títulos */
-        .container { padding: 80px 5%; max-width: 1200px; margin: auto; }
-        .section-title { text-align: center; margin-bottom: 60px; text-transform: uppercase; position: relative; font-weight: 800; }
-        .section-title::after { 
-            content: ''; width: 60px; height: 5px; background: var(--primario); 
-            position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); 
+        /* Ajuste del vídeo de YouTube para que actúe como fondo a pantalla completa */
+        .hero iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 56.25vw; /* Proporción 16:9 */
+            min-height: 100vh;
+            min-width: 177.77vh; /* Proporción 16:9 */
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            pointer-events: none; /* Evita que el usuario pause el video haciendo click */
         }
 
-        /* Grid de Soluciones */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; }
-        .card { 
-            background: var(--blanco); 
-            border: 1px solid #eee; 
-            overflow: hidden; 
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-            border-radius: 8px; 
-            box-shadow: var(--sombra);
+        /* Capa oscura superior para asegurar el contraste de las letras */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8));
+            z-index: 2;
         }
-        .card:hover { transform: translateY(-12px); border-color: var(--primario); }
-        .card img { width: 100%; height: 220px; object-fit: cover; }
-        .card-info { padding: 25px; }
-        .card-info h3 { margin: 0 0 10px 0; font-size: 1.3rem; }
 
-        .btn-card { 
-            background: var(--oscuro); 
-            color: var(--blanco); 
-            padding: 12px 24px; 
+        /* Capa de protección para que los textos queden arriba de todo */
+        .hero h1, .hero p, .hero .btn-principal {
+            position: relative;
+            z-index: 3;
+        }
+
+        .hero h1 { font-size: 3.5rem; margin-bottom: 15px; text-transform: uppercase; font-weight: 900; letter-spacing: -1px; }
+        .hero p { font-size: 1.3rem; max-width: 800px; margin-bottom: 35px; color: #e0e0e0; }
+
+        .btn-principal { 
+            background: var(--primario); 
+            color: var(--oscuro); 
+            padding: 18px 45px; 
             text-decoration: none; 
             font-weight: bold; 
             display: inline-block; 
             transition: 0.3s; 
-            font-size: 0.85rem; 
+            font-size: 1rem; 
             border-radius: 4px;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(255,204,0,0.3);
         }
-        .btn-card:hover { background: var(--primario); color: var(--oscuro); }
+        .btn-principal:hover { background: var(--blanco); color: var(--oscuro); box-shadow: none; }
 
-        /* Marcas */
-        .marcas-section { background: var(--gris); padding: 80px 5%; text-align: center; }
-        .marcas-grid { 
-            display: flex; justify-content: center; align-items: center; 
-            flex-wrap: wrap; gap: 40px; margin-top: 40px; 
+        .container { padding: 90px 5%; max-width: 1200px; margin: auto; }
+        .section-title { text-align: center; margin-bottom: 20px; text-transform: uppercase; position: relative; font-weight: 800; font-size: 2.2rem; }
+        .section-subtitle { text-align: center; color: #666; margin-bottom: 60px; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .section-title::after { 
+            content: ''; width: 50px; height: 5px; background: var(--primario); 
+            position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%); 
         }
-        .marca-item { 
-            font-size: 1.6rem; font-weight: 900; color: #bbb; 
-            text-decoration: none; transition: 0.4s; 
-        }
-        .marca-item:hover { color: var(--oscuro); transform: scale(1.1); }
 
-        /* Contacto */
+        .pilares-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .pilar-card { padding: 40px 30px; background: var(--blanco); border: 1px solid var(--borde); border-radius: 8px; box-shadow: var(--sombra); text-align: center; }
+        .pilar-card h3 { font-size: 1.4rem; margin-top: 0; text-transform: uppercase; margin-bottom: 15px; }
+        .pilar-card p { color: #666; font-size: 0.95rem; margin: 0; }
+
+        /* Fotos de las marcas */
+        .marca-box img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .marcas-section { background: var(--gris); border-top: 1px solid var(--borde); border-bottom: 1px solid var(--borde); }
+        .marcas-intro-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; margin-top: 20px; }
+        
+        .marca-box-link { text-decoration: none; color: inherit; }
+        .marca-box { 
+            background: var(--blanco); 
+            border: 1px solid var(--borde); 
+            padding: 20px 20px 30px 20px; 
+            text-align: center; 
+            border-radius: 6px; 
+            transition: 0.3s ease-in-out;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+        .marca-box:hover { transform: translateY(-5px); border-color: var(--primario); box-shadow: var(--sombra); }
+        .marca-box h4 { margin: 0 0 5px 0; font-size: 1.5rem; font-weight: 900; color: var(--oscuro); }
+        .marca-box span { font-size: 0.8rem; color: #888; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 10px;}
+        .marca-box p { font-size: 0.9rem; color: #555; margin: 0; }
+
         .contacto-box { 
             background: var(--oscuro); 
             color: var(--blanco); 
-            padding: 60px 20px; 
+            padding: 60px 40px; 
             border-radius: 12px; 
             text-align: center; 
-            margin-top: 20px;
             border-bottom: 8px solid var(--primario);
+            box-shadow: var(--sombra);
         }
-        .contacto-box h2 { font-size: 2rem; margin-bottom: 20px; }
-        .contacto-box p { font-size: 1.1rem; margin: 5px 0; }
+        .contacto-box h2 { font-size: 2.2rem; margin-bottom: 15px; text-transform: uppercase; font-weight: 800; }
+        .contacto-box p { font-size: 1.1rem; margin: 5px 0; color: #ccc; }
+        .btn-whatsapp {
+            background: var(--primario);
+            color: var(--oscuro);
+            padding: 15px 35px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 25px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .btn-whatsapp:hover { background: var(--blanco); color: var(--oscuro); }
 
-        footer { text-align: center; padding: 40px; font-size: 0.9rem; color: #888; }
+        footer { text-align: center; padding: 40px; font-size: 0.9rem; color: #888; background: #111; border-top: 3px solid #222; }
 
-        /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
+            .hero h1 { font-size: 2.4rem; }
             header { flex-direction: column; gap: 15px; }
             nav a { margin: 0 10px; }
         }
@@ -148,75 +197,96 @@
     </a>
     <nav>
         <a href="index.html">Inicio</a>
-        <a href="categorias.html">Categorías</a> 
-        <a href="#marcas">Marcas</a>
+        <a href="categorias.html">Categorías y Marcas</a> 
         <a href="#contacto">Contacto</a>
     </nav>
 </header>
 
 <section class="hero">
-    <h1>Carrocerías Prefabricadas</h1>
-    <p>Calidad industrial certificada. Distribución oficial de las marcas líderes en el sector del transporte.</p>
-    <a href="categorias.html" class="btn-card" style="background:var(--primario); color:var(--oscuro); padding: 18px 40px; font-size: 1rem;">VER CATÁLOGO COMPLETO</a>
+    <iframe src="https://www.youtube.com/embed/nZc0v9U8wV4?autoplay=1&mute=1&loop=1&playlist=nZc0v9U8wV4&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    
+    <h1>Carrocerias Prefabricadas</h1>
+    <p>Conectamos las necesidades de tu flota con la ingeniería de los fabricantes más robustos del mercado europeo. Eficiencia industrial de extremo a extremo.</p>
+    <a href="categorias.html" class="btn-principal">Catálogo</a>
 </section>
 
-<div class="container">
-    <h2 class="section-title">Soluciones Destacadas</h2>
-    <div class="grid">
-        <div class="card">
-<img src="https://images.pexels.com/photos/10133334/pexels-photo-10133334.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Basculantes">            <div class="card-info">
-                <h3>Cajas Basculantes</h3>
-                <p>Ingeniería avanzada para volquetes de alto rendimiento.</p>
-                <a href="cantoni.html" class="btn-card">INFO CANTONI</a>
-            </div>
+<div class="container" id="nosotros">
+    <div class="pilares-grid">
+        <div class="pilar-card">
+            <h3>1. Máxima Carga Útil</h3>
+            <p>Trabajamos con tecnologías de poliéster reforzado y aleaciones de aluminio bruto que disminuyen el peso muerto estructural, incrementando el margen logístico.</p>
         </div>
-        <div class="card">
-<img src="data:image/webp;base64,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" alt="Furgon">            <div class="card-info">
-                <h3>Kits de Carrocería</h3>
-                <p>Paneles sandwich y aluminio ultra ligeros y resistentes.</p>
-                <a href="liderkit.html" class="btn-card">INFO LIDERKIT</a>
-            </div>
+        <div class="pilar-card">
+            <h3>2. Logística Modular</h3>
+            <p>Estructuras despachadas en formatos Kit listos para ensamble de alta precisión, garantizando resistencia ante torsiones severas en carretera.</p>
         </div>
-        <div class="card">
-<img src="https://www.resma.es/wp-content/uploads/2024/01/DURISOTTI-JUMPER-500x300-c-default.png" alt="Estructuras">            <div class="card-info">
-                <h3>Cajas Estructurales</h3>
-                <p>Máxima robustez técnica con perfilería certificada.</p>
-                <a href="resma.html" class="btn-card">INFO RESMA</a>
-            </div>
-        </div>
-        <div class="card">
-<img src="https://auxiliarcarrocera.com/wp-content/uploads/2024/12/1724915248489_-en-tamano-grande-1024x766.jpeg">            <div class="card-info">
-                <h3>Cajas Especiales</h3>
-                <p>Sistemas Tauliner y personalizaciones a medida.</p>
-                <a href="auxiliar.html" class="btn-card">INFO AUXILIAR</a>
-            </div>
+        <div class="pilar-card">
+            <h3>3. Respaldo Europeo</h3>
+            <p>Cada componente, desde el cierre de falleba hasta el pistón hidráulico basculante, cumple normativas técnico-industriales estrictas.</p>
         </div>
     </div>
 </div>
 
-<section class="marcas-section" id="marcas">
-    <h2 class="section-title">MARCAS</h2>
-    <div class="marcas-grid">
-        <a href="cantoni.html" class="marca-item">CANTONI</a>
-        <a href="liderkit.html" class="marca-item">LIDERKIT</a>
-        <a href="resma.html" class="marca-item">RESMA</a>
-        <a href="auxiliar.html" class="marca-item">AUXILIAR</a>
+<section class="marcas-section">
+    <div class="container">
+        <h2 class="section-title">Especialización por Fabricante</h2>
+        <p class="section-subtitle">Accede directamente a la gama detallada e ingeniería de cada una de nuestras divisiones oficiales.</p>
+        
+        <div class="marcas-intro-grid">
+            <a href="cantoni.html" class="marca-box-link">
+                <div class="marca-box">
+                    <img src="cantoni/cantoni_jolly_cavalletto_2026.jpg">
+                    <h4>CANTONI</h4>
+                    <span>Obra y Basculantes</span>
+                    <p>Ingeniería pesada en volquetes de tres vías mecánicas.</p>
+                </div>
+            </a>
+            <a href="liderkit.html" class="marca-box-link">
+                <div class="marca-box">
+                    <img src="https://images.pexels.com/photos/6157053/pexels-photo-6157053.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Liderkit Kits">
+                    <h4>LIDERKIT</h4>
+                    <span>Paquetería en Kit</span>
+                    <p>Paneles técnico Plywood y acabados Poliéster Plus.</p>
+                </div>
+            </a>
+            <a href="resma.html" class="marca-box-link">
+                <div class="marca-box">
+                    <img src="https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Resma Componentes">
+                    <h4>RESMA</h4>
+                    <span>Perfilería y Herrajes</span>
+                    <p>Componentes estructurales de aluminio y seguridad industrial.</p>
+                </div>
+            </a>
+            <a href="tac.html" class="marca-box-link">
+                <div class="marca-box">
+                    <img src="https://images.pexels.com/photos/2199293/pexels-photo-2199293.jpeg?auto=compress&cs=tinysrgb&w=600" alt="TAC Tauliner">
+                    <h4>TAC</h4>
+                    <span>Grandes Volúmenes</span>
+                    <p>Sistemas de lonas Tauliner y adaptaciones especiales.</p>
+                </div>
+            </a>
+            <a href="polmar.html" class="marca-box-link">
+                <div class="marca-box">
+                    <img src="https://images.pexels.com/photos/9064940/pexels-photo-9064940.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Polmar Comercial">
+                    <h4>POLMAR</h4>
+                    <span>Distribución Comercial</span>
+                    <p>Furgones ligeros y chasis optimizados de alta longevidad.</p>
+                </div>
+            </a>
+        </div>
     </div>
 </section>
 
 <div class="container" id="contacto">
     <div class="contacto-box">
-        <h2 style="color:white; margin-top: 0; text-transform: uppercase;">¿Necesitas asesoramiento técnico?</h2>
-        <p><strong>Ubicación:</strong> Polígono Industrial Torrehierro, Talavera de la Reina</p>
-        <p><strong>Teléfono:</strong> 658 297 095 | <strong>Email:</strong> sanchezreneo@gmail.com</p>
-        <br>
-        <a href="https://wa.me/34658297095" class="btn-card" style="background:var(--primario); color:var(--oscuro); padding: 15px 40px;">
-            ABRIR CHAT DE WHATSAPP
-        </a>
+        <h2>Más información</h2>
+        <p><strong>Ubicación:</strong> 📍 Polígono Industrial Torrehierro, Talavera de la Reina</p>
+        <p><strong>Contacto:</strong> 📞 658 297 095 | sanchezreneo@gmail.com</p>
+        <a href="https://wa.me/34658297095" class="btn-whatsapp">Contactar</a>
     </div>
 </div>
 
-<footer>&copy; 2024 Carrocerías Prefabricadas S.L. - Eficiencia en el Transporte Profesional.</footer>
+<footer>&copy; 2026 Carrocerías Prefabricadas S.L.</footer>
 
 </body>
 </html>

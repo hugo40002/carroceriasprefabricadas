@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAC | Cajas Especiales y Lonas</title>
+    <style>
+        :root { --primario: #ffcc00; --oscuro: #1a1a1a; --gris: #f4f4f4; --blanco: #ffffff; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; line-height: 1.6; color: #333; }
+        header { background: var(--oscuro); color: var(--blanco); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--primario); }
+        .logo-link { text-decoration: none; color: inherit; }
+        .logo { font-size: 1.4rem; font-weight: 800; text-transform: uppercase; }
+        .logo span { color: var(--primario); }
+        nav a { color: var(--blanco); text-decoration: none; margin-left: 20px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; }
+        .hero { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://auxiliarcarrocera.com/wp-content/uploads/2024/12/1724915248489_-en-tamano-grande-1024x766.jpeg') no-repeat center center/cover; height: 350px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: var(--blanco); text-align: center; }
+        .container { padding: 60px 5%; max-width: 1200px; margin: auto; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .card { background: var(--blanco); border: 1px solid #eee; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .card-info { padding: 25px; }
+        .card-info h3 { margin: 0 0 10px 0; text-transform: uppercase; }
+        .contacto-box { background: var(--oscuro); color: var(--blanco); padding: 45px; border-radius: 8px; text-align: center; margin-top: 60px; border-bottom: 6px solid var(--primario); }
+        .btn-card { background: var(--primario); color: var(--oscuro); padding: 12px 25px; text-decoration: none; font-weight: bold; display: inline-block; border-radius: 4px; text-transform: uppercase; margin-top: 15px;}
+        footer { text-align: center; padding: 30px; font-size: 0.9rem; color: #888; background: #fafafa; }
+    </style>
+</head>
+<body>
+<header>
+    <a href="index.html" class="logo-link"><div class="logo">CARROCERÍAS<span>PREFABRICADAS</span></div></a>
+    <nav><a href="index.html">Inicio</a><a href="categorias.html">Categorías Y Marcas</a></nav>
+</header>
+<section class="hero">
+    <h1>TAC</h1>
+    <p>Especialistas en Sistemas Tauliner y Estructuras de Gran Volumen</p>
+</section>
+<div class="container">
+    <h2>Soluciones de Ingeniería TAC</h2>
+    <div class="grid">
+        <div class="card">
+            <div class="card-info">
+                <h3>Carrocerías de Lonas Correderas (Tauliner)</h3>
+                <p>Sistemas equipados con pilares desplazables y lonas de alta densidad de tensado rápido lateral. Ideales para operaciones de carga y descarga lateral mediante carretillas elevadoras.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-info">
+                <h3>Logística Textil y Cajas a Medida</h3>
+                <p>Estructuras rígidas optimizadas internamente mediante sistemas de cremallera y barras tubulares para el transporte suspendido de prendas (logística textil de gran volumen).</p>
+            </div>
+        </div>
+    </div>
+    <div class="contacto-box">
+        <h3>Información Productos TAC</h3>
+        <p>Teléfono: 658 297 095 | Correo: sanchezreneo@gmail.com</p>
+        <a href="https://wa.me/34658297095" class="btn-card">Consultar</a>
+    </div>
+</div>
+<footer>&copy; 2026 Carrocerías Prefabricadas S.L.</footer>
+</body>
+</html>
